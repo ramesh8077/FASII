@@ -1,0 +1,44 @@
+@import "tailwindcss";
+/* Continuous announcement scrolling */
+.announcement-track {
+  animation: announcement-scroll 5s linear infinite;
+}
+
+/* Allow users to stop and read */
+.announcement-window:hover .announcement-track,
+.announcement-window:focus-within .announcement-track {
+  animation-play-state: paused;
+}
+
+@keyframes announcement-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+  .announcement-track {
+    width: 100%;
+    animation: none;
+  }
+
+  .announcement-copy {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .announcement-copy span:first-child {
+    white-space: normal;
+  }
+
+  .announcement-copy[aria-hidden="true"],
+  .announcement-copy span[aria-hidden="true"],
+  .announcement-control {
+    display: none;
+  }
+}

@@ -1,0 +1,7 @@
+import { Link } from "react-router-dom";
+import { ArrowRight, CalendarDays, MapPin } from "lucide-react";
+import { fasiiEvents } from "../../../data/fasiiContent.js";
+
+export default function PressRelease() {
+  return <section className="bg-slate-50 py-14 lg:py-20" aria-labelledby="fasii-updates-heading"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12"><div className="mb-8"><p className="text-xs font-bold uppercase tracking-[.2em] text-orange-700">News & activities</p><h2 id="fasii-updates-heading" className="mt-2 text-3xl font-semibold text-slate-900 sm:text-4xl">Latest from FASII</h2><p className="mt-3 max-w-2xl leading-7 text-slate-600">Updates from FASII programmes, industry engagements and member association events.</p></div><div className="grid gap-4 md:grid-cols-2">{fasiiEvents.map((item) => <article key={item.id} className="rounded-lg border border-slate-200 bg-white p-6"><div className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-slate-500"><span className="inline-flex items-center gap-2"><CalendarDays size={16}/>{item.date}</span><span className="inline-flex items-center gap-2"><MapPin size={16}/>{item.location}</span></div><h3 className="mt-4 text-xl font-semibold text-slate-900">{item.title}</h3><p className="mt-3 leading-7 text-slate-600">{item.description}</p></article>)}</div><Link to="/media/news" className="mt-7 inline-flex items-center gap-2 font-semibold text-orange-700 hover:text-orange-900">View all news and events <ArrowRight size={18}/></Link></div></section>;
+}
