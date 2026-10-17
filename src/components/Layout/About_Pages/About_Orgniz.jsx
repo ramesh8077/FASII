@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import BannerImage from "../../../assets/Images/About/about-organization.jpg";
 const paragraphs = [
-  "The Federation of Associations of Small Industries of India (FASII) brings together associations representing small industries across the country. The federation’s office bearers come from member industry associations and regional industry communities.",
-  "FASII’s recent activities include vendor development programmes, industrial exhibitions, MSME awareness initiatives and engagement with industry associations. The supplied records document programmes in Delhi, Tamil Nadu and Hosur during September and October 2026.",
+  "The Federation of Associations of Small Industries of India (FASII) is a national federation that brings together associations representing small industries across the country. Our office bearers represent member industry associations and regional industry communities from all corners of India, working collectively to strengthen and support the small industries sector.",
+  "FASII serves as a vital link between small industries, government departments, Central Public Sector Undertakings (CPSUs), and various stakeholders in the MSME ecosystem. Through our national and regional leadership, we advocate for policies that foster growth, sustainability, and competitiveness of small industries.",
+  "Our key focus areas include organizing vendor development programmes, facilitating industrial exhibitions and connect events, conducting MSME awareness and capacity building initiatives, advocating for supportive policies, and creating networking opportunities for industry associations. Recent activities include the National Conclave for Industry Associations in New Delhi, MSME Connect’26 in Virudhunagar, and awareness programmes in Chennai, demonstrating our commitment to empowering small industries across India.",
 ];
 
 export default function About_Orgniz({

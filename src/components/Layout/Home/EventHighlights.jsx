@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, CalendarDays, MapPin } from "lucide-react";
 import { fasiiEvents } from "../../../data/fasiiContent.js";
-import conclave from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-12 at 9.35.21 AM.jpeg";
-import connect from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.15.31 PM.jpeg";
-import awareness from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.18.03 PM.jpeg";
-import hosur from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.14.54 PM.jpeg";
+import conclave from "../../../assets/Images/FASIIEvents/sidbi-conclave-main.jpeg";
+import connect from "../../../assets/Images/FASIIEvents/msme-connect-main.jpeg";
+import awareness from "../../../assets/Images/FASIIEvents/msme-awareness-main.jpeg";
+import hosur from "../../../assets/Images/FASIIEvents/hosur-schemes-main.jpeg";
 
 const photos = [conclave, connect, awareness, hosur];
 

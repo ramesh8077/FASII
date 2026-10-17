@@ -16,14 +16,104 @@ export const regionalChairmen = [
 ];
 
 export const fasiiEvents = [
-  { id: "sidbi-conclave", date: "12 October 2026", location: "New Delhi", title: "National Conclave for Industry Associations", description: "The National Conclave for Industry Associations was organised by SIDBI at Delhi. Shri Debdutta Banerjee, National Vice President, FASII, is seen at the right top and Shri Saileswar Panda, National President, FASII, at the left bottom.", category: "Conclave" },
-  { id: "msme-connect-26", date: "27–28 September 2026", location: "Virudhunagar, Tamil Nadu", title: "MSME Connect ’26 – Vendor Development Programme cum Industrial Exhibition", description: "FASII organised a vendor development programme cum industrial exhibition for CPSUs and Government Departments.", category: "Vendor Development" },
-  { id: "msme-awareness-agm", date: "29 September 2026", location: "Avadi, Chennai", title: "MSME Awareness Programme & FASII Annual General Meeting", description: "FASII, in association with Armoured Nigam Ltd., Ministry of Defence, and the Ministry of MSME DFO, Chennai, organised an MSME Awareness Programme in the forenoon. FASII’s Annual General Meeting was held in the afternoon.", category: "Awareness & AGM" },
-  { id: "hosur-schemes", date: "7 September 2026", location: "Hosur, Tamil Nadu", title: "MSME Schemes for Long-Term Sustainability", description: "Mr. B. Karthikeyan, Regional Chairman, FASII Southern Region, addressed the Hosur Industrial Association on MSME schemes for long-term sustainability.", category: "Industry Address" },
+  {
+    id: "sidbi-conclave",
+    date: "12 October 2026",
+    location: "New Delhi",
+    title: "National Conclave for Industry Associations",
+    description: "National Conclave for Industry Associations was organised by SIDBI at Delhi on 12th October, 2026. Shri Debdutta Banerjee, National Vice President, FASII is seen at the Right top and Shri Saileswar Panda, National President, FASII, at the Left bottom.",
+    category: "Conclave",
+    image: "/src/assets/Images/FASIIEvents/sidbi-conclave-main.jpeg"
+  },
+  {
+    id: "msme-connect-26",
+    date: "27–28 September 2026",
+    location: "Virudhunagar, Tamil Nadu",
+    title: "MSME Connect’26 - Vendor Development Programme cum Industrial Exhibition",
+    description: "FASII organised \"MSME Connect’26 - Vendor Development Programme cum Industrial Exhibition for CPSUs and Govt. Departments\" on 27th & 28th September, 2026, at Virudhunagar, Tamil Nadu.",
+    category: "Vendor Development",
+    image: "/src/assets/Images/FASIIEvents/msme-connect-main.jpeg"
+  },
+  {
+    id: "msme-awareness-agm",
+    date: "29 September 2026",
+    location: "Avadi, Chennai",
+    title: "MSME Awareness Programme & FASII Annual General Meeting",
+    description: "FASII in association with Armoured Nigam Ltd., Ministry of Defence and Ministry of MSME DFO, Chennai organised \"MSME Awareness Programme\" on 29th September, 2026 forenoon and the Annual General Meeting of FASII was held in the afternoon at Avadi, Chennai.",
+    category: "Awareness & AGM",
+    image: "/src/assets/Images/FASIIEvents/msme-awareness-main.jpeg"
+  },
+  {
+    id: "hosur-schemes",
+    date: "7 September 2026",
+    location: "Hosur, Tamil Nadu",
+    title: "MSME Schemes for Long-Term Sustainability",
+    description: "Mr. B. Karthikeyan, Regional Chairman, FASII-Southern Region, Addressed Hosur Industrial Association on 7th September, 2026 on \"MSME Schemes for Long-Term Sustainability\".",
+    category: "Industry Address",
+    image: "/src/assets/Images/FASIIEvents/hosur-schemes-main.jpeg"
+  },
 ];
 
 export const organization = {
   name: "Federation of Associations of Small Industries of India",
   shortName: "FASII",
-  about: "FASII is a federation of associations representing small industries across India. Its office bearers represent member industry associations and regional industry communities.",
+  about: "The Federation of Associations of Small Industries of India (FASII) brings together associations representing small industries across the country. The federation's office bearers come from member industry associations and regional industry communities, working together to support and strengthen India's small industries sector.",
+  description: "FASII actively engages in vendor development programmes, industrial exhibitions, MSME awareness initiatives, and policy advocacy. The federation serves as a vital link between small industries, government departments, CPSUs, and various stakeholders in the MSME ecosystem.",
+  focus: [
+    "Vendor Development Programmes",
+    "Industrial Exhibitions and Connect Events",
+    "MSME Awareness and Capacity Building",
+    "Policy Advocacy and Industry Representation",
+    "Networking and Collaboration"
+  ]
+};
+
+export const documents = [
+  {
+    id: "msme-bill",
+    title: "MSME Bill 2026",
+    description: "Latest MSME legislation and policy framework",
+    file: "/documents/MSME_Bill_2026.pdf",
+    category: "Policy"
+  },
+  {
+    id: "pmvbry",
+    title: "PMVBRY - Final",
+    description: "Prime Minister's scheme documentation",
+    file: "/documents/PMVBRY-Final.pdf",
+    category: "Schemes"
+  },
+  {
+    id: "quality-control",
+    title: "Quality Control Order of the Govt. of India",
+    description: "Government quality control standards and compliance requirements",
+    file: "/documents/Quality Control Order of the Govt. of India.pdf",
+    category: "Standards"
+  },
+  {
+    id: "bis-certification",
+    title: "Bureau of Indian Standards - Product Certification",
+    description: "Simplified procedure for BIS product certification",
+    file: "/documents/Bureau of Indian Standards - Product Certification - Simplified Procedure.pdf",
+    category: "Certification"
+  }
+];
+
+export const contactInfo = {
+  nationalPresident: {
+    name: "Shri Saileswar Panda",
+    role: "National President",
+    affiliation: "Khasmohal Balichak Polley Unnayan Samity",
+    address: "Village & Post: Radha Nagar, Howrah – 711 310, West Bengal",
+    phone: "09433218387",
+    email: "saileswarpanda@gmail.com"
+  },
+  southernRegion: {
+    name: "Shri B. Karthikeyan",
+    role: "Regional Chairman – Southern Region",
+    affiliation: "Indian Industries and Rural Development Foundation",
+    address: "Plot No. 29, 1st Main Road, 3rd Cross Street, Sabari Nagar Extension, Mugalivakkam, Chennai – 600125",
+    phone: "09444182838",
+    email: "fasiichairman@gmail.com"
+  }
 };
