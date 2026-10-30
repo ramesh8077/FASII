@@ -1,7 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Noto+Serif:wght@500;600;700&display=swap");
 @import "tailwindcss";
+
+/*
+ * FASII design tokens
+ * Primary accent : orange  (#ea580c / orange-600)
+ * Canvas         : warm off-white (#fffaf5)
+ * Ink            : slate-950  |  Support: amber-100, orange-50
+ */
+@theme {
+  --font-sans: "Public Sans", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Noto Serif", ui-serif, Georgia, "Times New Roman", serif;
+}
+
+/* Carry the announcement ticker's orange identity through the page canvas. */
+main.bg-white {
+  background-color: #fffaf5;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-slate-800);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: #fed7aa;
+    color: #7c2d12;
+  }
+
+  :focus-visible {
+    outline-color: var(--color-orange-600);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 /* Continuous announcement scrolling */
 .announcement-track {
-  animation: announcement-scroll 5s linear infinite;
+  animation: announcement-scroll 26s linear infinite;
 }
 
 /* Allow users to stop and read */

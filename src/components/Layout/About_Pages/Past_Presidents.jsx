@@ -1,84 +1,79 @@
 import { Link } from "react-router-dom";
 import { User } from "lucide-react";
+import { officeBearers } from "../../../data/fasiiContent.js";
+import PageHero from "../common/PageHero.jsx";
 
-const pastPresidents = [
-  {
-    name: "Shri Rajesh Kumar Gupta",
-    tenure: "2022-2024",
-    affiliation: "Industrial Association of Northern India",
-    contribution: "Led the federation during post-pandemic recovery, initiated digital transformation of member services"
-  },
-  {
-    name: "Shri Venkatesh Iyer",
-    tenure: "2020-2022",
-    affiliation: "South India Small Industries Federation",
-    contribution: "Strengthened government relations and established vendor development framework"
-  },
-  {
-    name: "Shri Anil Deshmukh",
-    tenure: "2018-2020",
-    affiliation: "Maharashtra Small Scale Industries Association",
-    contribution: "Expanded FASII's presence in Western region, initiated MSME awareness campaigns"
-  },
-  {
-    name: "Shri Biswajit Chakraborty",
-    tenure: "2016-2018",
-    affiliation: "Eastern India Entrepreneurs Forum",
-    contribution: "Established regional chairman structure, improved coordination among member associations"
-  }
-];
+const placeholderTerms = [1, 2, 3, 4];
 
 export default function Past_Presidents() {
+  const president = officeBearers.find(
+    (bearer) => bearer.role === "National President"
+  );
+
   return (
     <main className="bg-white text-slate-900">
-      <header className="bg-slate-100">
-        <div className="mx-auto max-w-7xl px-5 py-8 sm:px-8 lg:px-12">
-          <h1 className="text-3xl font-semibold sm:text-4xl">Past Presidents</h1>
-          <p className="mt-3 text-slate-600">
-            <Link to="/about" className="hover:text-orange-700">About FASII</Link> / Past Presidents
-          </p>
-        </div>
-      </header>
+      <PageHero title="Past Presidents" />
 
-      <section className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-12">
-        <div className="mb-8">
-          <p className="text-lg leading-7 text-slate-600">
-            FASII has been led by distinguished leaders from various industry associations across India. Each president has contributed significantly to the growth and strengthening of the federation.
-          </p>
-        </div>
+      <section className="mx-auto max-w-375 px-5 py-12 sm:px-8 lg:px-12">
+        <p className="max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">
+          FASII has been led by presidents drawn from its member industry
+          associations across India. This page records the federation&apos;s
+          leadership history.
+        </p>
 
-        {/* Current President Highlight */}
-        <div className="mb-12 rounded-lg border-2 border-orange-200 bg-orange-50 p-6">
-          <p className="mb-2 text-xs font-bold uppercase tracking-wider text-orange-700">Current Leadership</p>
-          <h2 className="text-2xl font-semibold text-slate-900">Shri Saileswar Panda</h2>
-          <p className="mt-2 text-slate-600">National President (2024 - Present)</p>
-          <p className="mt-3 text-sm text-slate-700">
-            Khasmohal Balichak Polley Unnayan Samity, West Bengal
+        {/* Current Leadership */}
+        <div className="mt-10 rounded-lg border border-orange-200 bg-orange-50 p-6 sm:p-8">
+          <p className="text-xs font-bold uppercase tracking-wider text-orange-700">
+            Current Leadership
           </p>
-          <Link to="/about/office-bearers" className="mt-4 inline-flex items-center text-sm font-semibold text-orange-700 hover:text-orange-900">
-            View current office bearers →
+          <h2 className="mt-3 text-2xl font-medium tracking-tight text-slate-950 sm:text-3xl">
+            {president.name}
+          </h2>
+          <p className="mt-2 text-sm font-semibold text-slate-700 sm:text-base">
+            {president.role}
+          </p>
+          <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base">
+            {president.affiliation}, West Bengal
+          </p>
+          <Link
+            to="/about/office-bearers"
+            className="mt-5 inline-flex items-center rounded-md bg-orange-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-orange-700"
+          >
+            View current office bearers
           </Link>
         </div>
 
-        {/* Past Presidents List */}
-        <h3 className="mb-6 text-xl font-semibold text-slate-900">Former Presidents</h3>
-        <div className="space-y-6">
-          {pastPresidents.map((president, index) => (
-            <article key={index} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+        {/* Former Presidents */}
+        <h2 className="mt-14 text-xl font-medium tracking-tight text-slate-950 sm:text-2xl">
+          Former Presidents
+        </h2>
+        <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base">
+          Historical records of former presidents are being compiled and will be
+          published on this page shortly.
+        </p>
+
+        <div className="mt-8 grid gap-5 sm:grid-cols-2">
+          {placeholderTerms.map((slot) => (
+            <article
+              key={slot}
+              className="rounded-lg border border-slate-200 bg-[#fffaf5] p-6 shadow-sm"
+            >
               <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-600">
-                  <User size={24} />
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-orange-200 bg-orange-100 text-orange-700">
+                  <User size={24} aria-hidden="true" />
                 </div>
                 <div className="flex-1">
                   <div className="flex flex-wrap items-baseline justify-between gap-3">
-                    <h3 className="text-xl font-semibold text-slate-900">{president.name}</h3>
-                    <span className="rounded-full bg-orange-100 px-3 py-1 text-xs font-semibold text-orange-700">
-                      {president.tenure}
+                    <h3 className="text-base font-semibold text-slate-700 sm:text-lg">
+                      Former President — To be updated
+                    </h3>
+                    <span className="rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-semibold text-orange-700">
+                      —
                     </span>
                   </div>
-                  <p className="mt-2 text-sm font-medium text-slate-600">{president.affiliation}</p>
-                  <p className="mt-3 text-sm leading-6 text-slate-700">
-                    <span className="font-medium">Key Contribution:</span> {president.contribution}
+                  <p className="mt-3 text-sm leading-6 text-slate-600">
+                    Tenure and association details will be published once
+                    verified records are available.
                   </p>
                 </div>
               </div>
@@ -86,9 +81,18 @@ export default function Past_Presidents() {
           ))}
         </div>
 
-        <div className="mt-10 rounded-lg bg-slate-50 p-6 text-center">
-          <p className="text-sm text-slate-600">
-            Each president has built upon the legacy of their predecessors, strengthening FASII's role as the voice of small industries across India.
+        <div className="mt-10 rounded-lg border border-slate-200 bg-slate-100 p-6">
+          <p className="text-sm leading-6 text-slate-600">
+            Verified records of former presidents will be added here as they are
+            confirmed. For enquiries relating to the federation&apos;s
+            leadership, please{" "}
+            <Link
+              to="/about"
+              className="font-semibold text-orange-700 transition-colors hover:text-orange-600"
+            >
+              contact FASII
+            </Link>
+            .
           </p>
         </div>
       </section>

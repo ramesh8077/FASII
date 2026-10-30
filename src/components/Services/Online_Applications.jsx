@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-// import BannerImage from "../../../assets/Images/About/about-organization.jpg";
+import PageHero from "../Layout/common/PageHero";
+
 const paragraphs = [
 "1.2.1. Part A- First Timer: It provides one time incentive of upto ₹ 15,000/- to assist first timers in navigating their learning curve before they become fully productive. ",
 "1.2.2. Part B- Support to Employers with focus on Manufacturing sector: It is an employer-focused Part of the scheme that supports creation of sustained additional employment in all sectors. It incentivizes employers for 02 years for the creation of additional employment. For the establishments engaged in the manufacturing sector, the incentives will be provided for 04 years."
@@ -28,109 +28,59 @@ const Definitions = [
 " 3.2. The definitions and other expressions used in this Scheme shall carry the same meaning as are assigned to them in the Employees’ Provident Funds and Miscellaneous Provisions Act, 1952 (henceforth called “The Act” or “EPF & MP Act, 1952”) or any of the Schemes framed there under, in case they are not defined in the above para. ",
 ]
 
-export default function Online_Applications({
-  // bannerImage = BannerImage,
-}) {
+export default function Online_Applications() {
   return (
     <main className="bg-white text-slate-900">
-      {/* Page title and breadcrumb */}
-      <header className="bg-[#f5f5f5]">
-        <div className="mx-auto max-w-375 px-5 py-7 sm:px-8 lg:px-12">
-          <h1 className="text-3xl font-medium tracking-tight sm:text-4xl">
-       Schems  
-          </h1>
+      <PageHero title="Schemes" />
 
-          <nav aria-label="Breadcrumb" className="mt-4">
-            <ol className="flex flex-wrap items-center gap-3 text-sm font-semibold text-slate-500 sm:text-base">
-              <li>
-                <Link
-                  to="/services"
-                  className="transition-colors hover:text-orange-600 focus-visible:outline-2 focus-visible:outline-orange-500"
-                >
-Schems             </Link>
-              </li>
-
-              <li aria-hidden="true" className="text-slate-800">
-                /
-              </li>
-
-              <li aria-current="page" className="text-slate-600">
-Scehems               </li>
-            </ol>
-          </nav>
-        </div>
-      </header>
-
-      {/* Full-width organization banner */}
-      {/* <figure className="overflow-hidden bg-slate-200">
-        <img
-          src={bannerImage}
-          alt="FASSI Federation House surrounded by greenery"
-          className="h-55 w-full object-cover object-center sm:h-70 lg:h-85"
-          fetchPriority="high"
-        />
-      </figure> */}
-
-      {/* About content */}
-      <section aria-labelledby="about-content-title" className="relative overflow-hidden py-14 sm:py-16 lg:py-20">
+      {/* Scheme content */}
+      <section
+        aria-labelledby="about-content-title"
+        className="relative mx-auto max-w-375 overflow-hidden px-5 py-12 sm:px-8 lg:px-12"
+      >
         <div className="pointer-events-none absolute inset-x-0 top-9 flex justify-center" aria-hidden="true">
           <span className="font-serif text-[78px] font-bold leading-none text-black/[0.035] sm:text-[110px] lg:text-[145px]">
-            FASSI
+            FASII
           </span>
         </div>
 
-        <div className="relative mx-auto max-w-375 px-5 sm:px-8 lg:px-12">
-          <div className="text-center">
-            <span className="mx-auto mb-4 block h-0.75 w-12 bg-orange-500" aria-hidden="true" />
+        <div className="relative max-w-4xl space-y-10">
+          <h2 id="about-content-title" className="text-2xl font-semibold text-slate-900">
+            Pradhan Mantri Viksit Bharat Rozgar Yojana
+          </h2>
 
-            <h2 id="about-content-title" className="font-serif text-3xl font-medium text-slate-900 sm:text-4xl">
-              Pradhan Mantri Viksit Bharat Rozgar Yojana  
+          <div>
+            <h2 className="text-2xl font-semibold text-slate-900">
+              1. Part A &amp; Part B
             </h2>
+            <div className="mt-6 space-y-6 text-base leading-8 text-slate-700 sm:text-lg sm:leading-9">
+              {paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
           </div>
 
-       <div
-        className="mt-12 lg:mt-16">
-    <h3 className="mb-6 text-2xl font-bold text-black sm:text-3xl">
-    1. Part A & Part B
-  </h3>
-          <div
-           className="mt-12 space-y-7 text-base leading-8 text-slate-700 sm:text-lg sm:leading-9 lg:mt-16">
-            {paragraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-         </div>
-
-           <div className="mt-12 lg:mt-16">
-    <h3 className="mb-6 text-2xl font-bold text-black sm:text-3xl">
-    2. Scheme Objective 
-  </h3>
-
-          <div
-          
-
-   className="mt-12 space-y-7 text-base leading-8 text-slate-800 sm:text-lg sm:leading-9 lg:mt-16">
-            {SchemeObjective.map((SchemeObjective) => (
-              <p key={SchemeObjective}>{SchemeObjective}</p>
-              
-            ))}
-          </div>
+          <div>
+            <h2 className="text-2xl font-semibold text-slate-900">
+              2. Scheme Objective
+            </h2>
+            <div className="mt-6 space-y-6 text-base leading-8 text-slate-700 sm:text-lg sm:leading-9">
+              {SchemeObjective.map((item) => (
+                <p key={item}>{item}</p>
+              ))}
+            </div>
           </div>
 
-          <div className="mt-12 lg:mt-16">
-    <h3 className="mb-6 text-2xl font-bold text-black sm:text-3xl">
-    3. Definitions
-  </h3>
-           <div
-
-   className="mt-12 space-y-7 text-base leading-8 text-slate-800 sm:text-lg sm:leading-9 lg:mt-16">
-            {Definitions.map((Definitions) => (
-              <p key={Definitions}>{Definitions}</p>
-              
-            ))}
+          <div>
+            <h2 className="text-2xl font-semibold text-slate-900">
+              3. Definitions
+            </h2>
+            <div className="mt-6 space-y-6 text-base leading-8 text-slate-700 sm:text-lg sm:leading-9">
+              {Definitions.map((item) => (
+                <p key={item}>{item}</p>
+              ))}
+            </div>
           </div>
-          </div>
-
         </div>
       </section>
     </main>

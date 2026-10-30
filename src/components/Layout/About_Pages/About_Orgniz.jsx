@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import BannerImage from "../../../assets/Images/About/about-organization.jpg";
+import BannerImage from "../../../assets/Images/FASIIEvents/msme-connect-main.jpeg";
+import PageHero from "../common/PageHero.jsx";
 const paragraphs = [
   "The Federation of Associations of Small Industries of India (FASII) is a national federation that brings together associations representing small industries across the country. Our office bearers represent member industry associations and regional industry communities from all corners of India, working collectively to strengthen and support the small industries sector.",
   "FASII serves as a vital link between small industries, government departments, Central Public Sector Undertakings (CPSUs), and various stakeholders in the MSME ecosystem. Through our national and regional leadership, we advocate for policies that foster growth, sustainability, and competitiveness of small industries.",
@@ -11,45 +11,7 @@ export default function About_Orgniz({
 }) {
   return (
     <main className="bg-white text-slate-900">
-      {/* Page title and breadcrumb */}
-      <header className="bg-[#f5f5f5]">
-        <div className="mx-auto max-w-375 px-5 py-7 sm:px-8 lg:px-12">
-          <h1 className="text-3xl font-medium tracking-tight sm:text-4xl">
-            About Us
-          </h1>
-
-          <nav aria-label="Breadcrumb" className="mt-4">
-            <ol className="flex flex-wrap items-center gap-3 text-sm font-semibold text-slate-500 sm:text-base">
-              <li>
-                <Link
-                  to="/about"
-                  className="transition-colors hover:text-orange-600 focus-visible:outline-2 focus-visible:outline-orange-500"
-                >
-                  About Us
-                </Link>
-              </li>
-
-              <li aria-hidden="true" className="text-slate-800">
-                /
-              </li>
-
-              <li aria-current="page" className="text-slate-600">
-                About Us
-              </li>
-            </ol>
-          </nav>
-        </div>
-      </header>
-
-      {/* Full-width organization banner */}
-      <figure className="overflow-hidden bg-slate-200">
-        <img
-          src={bannerImage}
-          alt="FASII identity banner"
-          className="h-55 w-full object-cover object-center sm:h-70 lg:h-85"
-          fetchPriority="high"
-        />
-      </figure>
+      <PageHero title="About FASII" image={bannerImage} />
 
       {/* About content */}
       <section aria-labelledby="about-content-title" className="relative overflow-hidden py-14 sm:py-16 lg:py-20">

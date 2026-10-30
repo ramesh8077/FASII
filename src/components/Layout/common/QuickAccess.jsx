@@ -14,25 +14,25 @@ const quickLinks = [
     title: "Research & Policy",
     description: "Studies, Surveys & Policy Recommendations",
     icon: FiTrendingUp,
-    path: "/research-policy",
+    path: "/knowledge/reports",
   },
   {
     title: "Media Centre",
     description: "Press Releases, Statements, Images & Videos",
     icon: FiImage,
-    path: "/media-centre",
+    path: "/media/news",
   },
   {
     title: "International Engagement",
     description: "Bilateral & Global Initiatives",
     icon: FiGlobe,
-    path: "/international-engagement",
+    path: "/international",
   },
   {
     title: "Members",
     description: "Benefits, Services & Member Resources",
     icon: FiUsers,
-    path: "/members",
+    path: "/about/allied-organisations",
   },
 ];
 
@@ -83,10 +83,10 @@ export default function QuickAccess() {
             key={path}
             to={path}
             onClick={() => setIsOpen(false)}
-            className="group flex items-start gap-4 border-b border-slate-100 px-5 py-5 transition-colors last:border-b-0 hover:bg-sky-50 focus-visible:outline focus-visible:-outline-offset-2 focus-visible:outline-sky-600 sm:py-6"
+            className="group flex items-start gap-4 border-b border-slate-100 px-5 py-5 transition-colors last:border-b-0 hover:bg-orange-50 focus-visible:outline focus-visible:-outline-offset-2 focus-visible:outline-orange-600 sm:py-6"
           >
             {/* Icon */}
-            <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-[#f4f4f4] text-[#333] transition-colors group-hover:bg-sky-100 group-hover:text-sky-600">
+            <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-orange-50 text-orange-700 transition-colors group-hover:bg-orange-100 group-hover:text-orange-800">
               <Icon size={27} aria-hidden="true" />
             </span>
 
@@ -111,7 +111,7 @@ export default function QuickAccess() {
         aria-expanded={isOpen}
         aria-controls="quick-access-panel"
         onClick={() => setIsOpen((previous) => !previous)}
-        className={`relative flex min-h-14 w-full items-center justify-center gap-2 bg-[#09b6e5] px-4 py-4 text-lg font-medium text-white shadow-lg transition-colors hover:bg-[#009fce] focus-visible:outline focus-visible:-outline-offset-4 focus-visible:outline-white ${
+        className={`relative flex min-h-14 w-full items-center justify-center gap-2 bg-orange-600 px-4 py-4 text-lg font-medium text-white shadow-lg transition-colors hover:bg-orange-700 focus-visible:outline focus-visible:-outline-offset-4 focus-visible:outline-white ${
           isOpen ? "" : "rounded-t-xl"
         }`}
       >

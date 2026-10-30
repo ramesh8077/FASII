@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { officeBearers, regionalChairmen } from "../../../data/fasiiContent.js";
+import PageHero from "../common/PageHero.jsx";
 
 const executiveCommitteeMembers = [
   ...officeBearers,
@@ -34,14 +34,7 @@ function MemberCard({ member }) {
 export default function Executive_Commitee() {
   return (
     <main className="bg-white text-slate-900">
-      <header className="bg-slate-100">
-        <div className="mx-auto max-w-7xl px-5 py-8 sm:px-8 lg:px-12">
-          <h1 className="text-3xl font-semibold sm:text-4xl">Executive Committee</h1>
-          <p className="mt-3 text-slate-600">
-            <Link to="/about" className="hover:text-orange-700">About FASII</Link> / Executive Committee
-          </p>
-        </div>
-      </header>
+      <PageHero title="Executive Committee" />
 
       <section className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-12">
         <div className="mb-10">

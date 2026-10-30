@@ -65,13 +65,13 @@ export default function Navbar() {
   };
 
   const desktopLinkClass = ({ isActive }) =>
-    `flex min-h-14 items-center px-1.5 text-[10px] font-semibold
-     uppercase tracking-wide transition-colors 2xl:px-2
+    `flex min-h-14 items-center px-1.5 text-[11px] font-semibold
+     uppercase tracking-wide transition-colors xl:px-2.5
      focus-visible:outline-2 focus-visible:outline-offset-[-4px]
      focus-visible:outline-orange-400 ${
        isActive
          ? "bg-orange-600 text-white"
-         : "text-slate-800 hover:bg-white/10 hover:text-black/90"
+         : "text-slate-800 hover:bg-orange-50 hover:text-orange-700"
      }`;
 
   return (
@@ -88,7 +88,7 @@ export default function Navbar() {
     >
       <div className="min-w-0">
         {/* Desktop navigation */}
-        <ul className="hidden items-stretch justify-between 2xl:flex">
+        <ul className="hidden items-stretch justify-between xl:flex">
           <li>
             <NavLink
               to="/"
@@ -140,13 +140,13 @@ export default function Navbar() {
                   aria-controls={panelId}
                   onClick={() => toggleMenu(item.label)}
                   className={`flex min-h-14 items-center gap-1 px-1.5
-                    text-[10px] font-semibold uppercase tracking-wide 2xl:px-2
+                    text-[11px] font-semibold uppercase tracking-wide xl:px-2.5
                     transition-colors focus-visible:outline-2
                     focus-visible:-outline-offset-4
                     focus-visible:outline-orange-400 ${
                       isOpen || isSectionActive(item)
                         ? "bg-orange-600 text-white"
-                        : "text-slate-800 hover:bg-white/10 hover:text-black/90"
+                        : "text-slate-800 hover:bg-orange-50 hover:text-orange-700"
                     }`}
                 >
                   {item.label}
@@ -216,7 +216,7 @@ export default function Navbar() {
         </ul>
 
         {/* Mobile/tablet toolbar */}
-        <div className="flex min-h-12 items-center justify-end 2xl:hidden">
+        <div className="flex min-h-12 items-center justify-end xl:hidden">
           <Link
             to="/"
             onClick={closeMenus}
@@ -248,7 +248,7 @@ export default function Navbar() {
       <div
         id="mobile-navigation"
         hidden={!mobileOpen}
-        className="absolute inset-x-0 top-full z-50 max-h-[65dvh] overflow-y-auto overscroll-contain border-b border-slate-200 bg-white shadow-xl 2xl:hidden"
+        className="absolute inset-x-0 top-full z-50 max-h-[65dvh] overflow-y-auto overscroll-contain border-b border-slate-200 bg-white shadow-xl xl:hidden"
       >
         <ul className="mx-auto max-w-7xl divide-y divide-slate-100 px-4">
           {navigationItems.map((item, index) => {

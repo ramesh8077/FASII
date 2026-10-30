@@ -5,9 +5,9 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import banner1 from "../../../assets/Images/HeroSliderimages/banner-1.jpg";
-import banner2 from "../../../assets/Images/HeroSliderimages/banner-2.jpg";
-import banner3 from "../../../assets/Images/HeroSliderimages/banner-3.jpg";
+import banner1 from "../../../assets/Images/FASIIEvents/msme-connect-main.jpeg";
+import banner2 from "../../../assets/Images/FASIIEvents/msme-awareness-main.jpeg";
+import banner3 from "../../../assets/Images/FASIIEvents/sidbi-conclave-main.jpeg";
 
 const slides = [
   {
@@ -19,7 +19,7 @@ const slides = [
     button: "About FASII",
     path: "/about",
       image: banner1,
-    background: "linear-gradient(120deg, #0f172a, #164e63)",
+    background: "linear-gradient(120deg, #0f172a, #7c2d12)",
   },
   {
     id: "knowledge",
@@ -30,7 +30,7 @@ const slides = [
     button: "Meet the Office Bearers",
     path: "/about/office-bearers",
     image: banner2,
-    background: "linear-gradient(120deg, #172554, #065f46)",
+    background: "linear-gradient(120deg, #111827, #9a3412)",
   },
   {
     id: "events",
@@ -196,14 +196,14 @@ const changeSlide = (index) => {
                 aria-current={index === activeSlide ? "true" : undefined}
                 className="flex h-11 w-11 items-center justify-center rounded focus-visible:outline-2 focus-visible:outline-orange-300"
               >
-                {/* <span
+                <span
                   aria-hidden="true"
                   className={`h-1.5 rounded-full transition-all motion-reduce:transition-none ${
                     index === activeSlide
                       ? "w-8 bg-orange-400"
-                      : "w-3 bg-white/50"
+                      : "w-3 bg-white/60 hover:bg-white"
                   }`}
-                /> */}
+                />
               </button>
             ))}
           </div>

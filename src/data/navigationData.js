@@ -41,7 +41,7 @@ export const navigationItems = [
   {
     label: "Services",
     children: [
-      { label: "Introduction Pardhan Mantri Yojana", path: "/services/YojanaIntro" },
+      { label: "PM Viksit Bharat Rozgar Yojana", path: "/services/YojanaIntro" },
       { label: "Online Applications", path: "/services/applications" },
       { label: "Public Grievances", path: "/services/grievances" },
       { label: "Downloads", path: "/services/downloads" },
@@ -76,6 +76,7 @@ export const navigationItems = [
       { label: "North Zone", path: "/1/north" },
       { label: "South Zone", path: "/2/south" },
       { label: "East Zone", path: "/3/east" },
+      { label: "West Zone", path: "/4/west" },
     ]
   }
 ];

@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-// import BannerImage from "../../../assets/Images/About/about-organization.jpg";
+import PageHero from "../Layout/common/PageHero";
+
 const paragraphs = [
 "4.1. All establishments including New Establishments as well as the Exempted establishments covered under EPF & MP Act, 1952, are eligible under the scheme, provided they file the ECR along with contributions regularly and fulfill other conditions of the scheme. ",
 "4.2. The period for registration under the scheme will be as following: ",
@@ -22,259 +22,282 @@ const Guidelines = [
 "● The 1st instalment will be up to a maximum of ₹7,500/-, to be calculated as half of the average EPF wage for six continuous completed months and payable after filing of six completed months’ ECRs along with contributions. ",
 "● The 2nd instalment, payable to the First Timer, will be equal to the average of the 12 completed months’ EPF wage reduced by 1st instalment and restricted to a total incentive of ₹15,000. The 2nd installment will be kept in an appropriate saving instrument/deposit account for a period to be specified in the guidelines which will be issued by M/o L&E in due course. The First Timer will become eligible for this part of incentive only after completion of the Financial Literacy program and filing of 12 completed months’ ECRs along with contributions by the establishment.  ",
 ""
-] 
+]
 const Partb = [
   "The benefits under this Part will be provided to the employers in respect of the employees who are either first timers or Re-Joinees, subject to fulfilling the threshold criterion. ",
 
 ]
-export default function Public_Grievances({
-}) {
+
+const bodyClass = "text-base leading-8 text-slate-700 sm:text-lg sm:leading-9";
+const headingClass = "text-2xl font-semibold text-slate-900";
+const subHeadingClass = "text-xl font-semibold text-slate-900";
+
+export default function Public_Grievances() {
   return (
     <main className="bg-white text-slate-900">
-      {/* Page title and breadcrumb */}
-      <header className="bg-[#f5f5f5]">
-        <div className="mx-auto max-w-375 px-5 py-7 sm:px-8 lg:px-12">
-          <h1 className="text-3xl font-medium tracking-tight sm:text-4xl">
- Applicability of the Scheme to an Establishment 
-          </h1>
+      <PageHero title="Applicability of the Scheme to an Establishment" />
 
-          <nav aria-label="Breadcrumb" className="mt-4">
-            <ol className="flex flex-wrap items-center gap-3 text-sm font-semibold text-slate-500 sm:text-base">
-              <li>
-                <Link
-                  to="/services"
-                  className="transition-colors hover:text-orange-600 focus-visible:outline-2 focus-visible:outline-orange-500"
-                >
-                 Applicability of the Scheme to an Establishment 
-                </Link>
-              </li>
-
-              <li aria-hidden="true" className="text-slate-800">
-                /
-              </li>
-
-              <li aria-current="page" className="text-slate-600">
-Applicability of the Scheme to an Establishment             </li>
-            </ol>
-          </nav>
-        </div>
-      </header>
-      {/* About content */}
-      <section aria-labelledby="about-content-title" className="relative overflow-hidden py-14 sm:py-16 lg:py-20">
+      {/* Scheme content */}
+      <section
+        aria-labelledby="about-content-title"
+        className="relative mx-auto max-w-375 overflow-hidden px-5 py-12 sm:px-8 lg:px-12"
+      >
         <div className="pointer-events-none absolute inset-x-0 top-9 flex justify-center" aria-hidden="true">
           <span className="font-serif text-[78px] font-bold leading-none text-black/[0.035] sm:text-[110px] lg:text-[145px]">
-            FASSI
+            FASII
           </span>
         </div>
 
-        <div className="relative mx-auto max-w-375 px-5 sm:px-8 lg:px-12">
-          <div className="text-center">
-            <span className="mx-auto mb-4 block h-0.75 w-12 bg-orange-500" aria-hidden="true" />
+        <div className="relative max-w-4xl">
+          <h2 id="about-content-title" className={headingClass}>
+            Applicability of the Scheme to an Establishment
+          </h2>
 
-            <h2 id="about-content-title" className="font-serif text-3xl font-medium text-slate-900 sm:text-4xl">
-       Applicability of the Scheme to an Establishment 
-            </h2>
-          </div>
-
-          <div className="mt-12 space-y-7 text-base leading-8 text-slate-700 sm:text-lg sm:leading-9 lg:mt-16">
+          <div className={`mt-6 space-y-6 ${bodyClass}`}>
             {paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-{/* Scheme registration dates */}
-<div className="mt-8 overflow-x-auto">
-  <table className="w-full min-w-135 max-w-4xl border-collapse text-left text-base text-black sm:text-xl">
-    <caption className="sr-only">
-      Scheme registration period for Part A and Part B
-    </caption>
 
-    <thead>
-      <tr>
-        <th
-          scope="col"
-          className="border-2 border-black px-5 py-5 font-bold"
-        >
-          Scheme
-        </th>
-        <th
-          scope="col"
-          className="border-2 border-black px-5 py-5 font-bold"
-        >
-          Effective date
-        </th>
-        <th
-          scope="col"
-          className="border-2 border-black px-5 py-5 font-bold"
-        >
-          End date
-        </th>
-      </tr>
-    </thead>
+            {/* Scheme registration dates */}
+            <div className="mt-8 overflow-x-auto">
+              <table className="w-full min-w-135 max-w-4xl border-collapse text-left text-base text-slate-700 sm:text-lg">
+                <caption className="sr-only">
+                  Scheme registration period for Part A and Part B
+                </caption>
 
-    <tbody>
-      <tr>
-        <th
-          scope="row"
-          className="border-2 border-black px-5 py-5 font-bold"
-        >
-          Part A &amp; Part B
-        </th>
-        <td className="border-2 border-black px-5 py-5">
-          01.08.2025
-        </td>
-        <td className="border-2 border-black px-5 py-5">
-          31.07.2027
-        </td>
-      </tr>
-    </tbody>
-  </table>
+                <thead>
+                  <tr className="bg-orange-50 text-orange-800">
+                    <th scope="col" className="border border-slate-200 px-5 py-4 font-semibold">
+                      Scheme
+                    </th>
+                    <th scope="col" className="border border-slate-200 px-5 py-4 font-semibold">
+                      Effective date
+                    </th>
+                    <th scope="col" className="border border-slate-200 px-5 py-4 font-semibold">
+                      End date
+                    </th>
+                  </tr>
+                </thead>
 
-</div>
-
-
-<p>Note: All the existing establishments which are registered with EPFO and having a unique Employer’s code, would be considered deemed registered under the scheme w.e.f. 01.08.2025. However, such establishments would require
-   to provide details of PAN, GSTN and PAN linked Bank Account Number of the employer.  </p>
-
-<div className="mt-12 lg:mt-16">
-  <h3 className="mb-6 text-2xl font-bold text-black sm:text-3xl underline">Determination</h3>
-</div>
-    <div className="mt-12 space-y-7 text-base leading-8 text-slate-700 sm:text-lg sm:leading-9 lg:mt-16">
-            {Determination.map((Determination) => (
-              <p key={Determination}>{Determination}</p>
-            ))} 
+                <tbody>
+                  <tr>
+                    <th scope="row" className="border border-slate-200 px-5 py-4 font-semibold text-slate-900">
+                      Part A &amp; Part B
+                    </th>
+                    <td className="border border-slate-200 px-5 py-4">
+                      01.08.2025
+                    </td>
+                    <td className="border border-slate-200 px-5 py-4">
+                      31.07.2027
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-   
-   <div>
-   <h3 className="mb-6 text-2xl font-bold text-black sm:text-3xl underline">Guidelines for calculating incentive under the scheme </h3>
-   </div>
-   <div className="mt-12 space-y-7 text-base leading-8 text-slate-700 sm:text-lg sm:leading-9 lg:mt-16">
-            {Guidelines.map((Guidelines) => (
-              <p key={Guidelines}>{Guidelines}</p>
-            ))}
-   </div>
 
-   <div className="mt-12 lg:mt-16">
-  <h3 className="mb-6 text-2xl font-bold text-black sm:text-3xl underline">Part B of the scheme</h3>
-</div>
-<div className="mt-12 space-y-7 text-base leading-8 text-slate-700 sm:text-lg sm:leading-9 lg:mt-16">
-            {Partb.map((Partb) => (
-              <p key={Partb}>{Partb}</p>
-            ))}
-            <h1 className="text-2xl font-bold text-black">6.2.1. Amount of Incentive/ Benefit and Periodicity </h1>
-            <p>Under this Part of the Scheme, incentives will be provided to the employer at the following rates for two years in respect of employment generated over and above the baseline fulfilling the threshold limit i.e., at least 2 additional employments with baseline of less than 50 and at least 5 additional employments with baseline of 50 or above. The criteria for providing incentive to the employer will be as under: </p>
+            <p>
+              Note: All the existing establishments which are registered with EPFO and having a unique Employer’s code, would be considered deemed registered under the scheme w.e.f. 01.08.2025. However, such establishments would require to provide details of PAN, GSTN and PAN linked Bank Account Number of the employer.
+            </p>
+          </div>
 
-    <div className="mt-8 overflow-x-auto"> 
-  <table className="mx-auto w-full min-w-162.5 max-w-226.25 table-fixed border-collapse bg-white text-center text-lg text-black sm:text-2xl">
-    <caption className="sr-only">
-      EPF wage slabs and monthly employer benefits
-    </caption>
+          <div className="mt-12 lg:mt-16">
+            <h2 className={headingClass}>Determination</h2>
 
-    <colgroup>
-      <col className="w-[37%]" />
-      <col className="w-[63%]" />
-    </colgroup>
+            <div className={`mt-6 space-y-6 ${bodyClass}`}>
+              {Determination.map((item) => (
+                <p key={item}>{item}</p>
+              ))}
+            </div>
+          </div>
 
-    <thead>
-      <tr>
-        <th
-          scope="col"
-          className="border-2 border-black px-5 py-3 align-top font-bold leading-[1.8]"
-        >
-          EPF Wage Slabs of
-          <br />
-          Additional Employee in
-          <br />
-          ₹
-        </th>
+          <div className="mt-12 lg:mt-16">
+            <h2 className={headingClass}>
+              Guidelines for calculating incentive under the scheme
+            </h2>
 
-        <th
-          scope="col"
-          className="border-2 border-black px-5 py-3 align-top font-bold leading-[1.8]"
-        >
-          Benefit to the Employer in ₹
-          <span className="mt-4 block">
-            (per additional employment per month as
-            <br />
-            per prescribed criteria)
-          </span>
-        </th>
-      </tr>
-    </thead>
+            <div className={`mt-6 space-y-6 ${bodyClass}`}>
+              {Guidelines.map((item) => (
+                <p key={item}>{item}</p>
+              ))}
+            </div>
+          </div>
 
-    <tbody>
-      <tr>
-        <td className="h-16 border border-black px-4 align-top">
-          {"<= 10,000"}
-          <sup>*</sup>
-        </td>
-        <td className="h-16 border border-black px-4 align-top">
-          <span className=" px-1">Up to 1000</span>
-        </td>
-      </tr>
+          <div className="mt-12 lg:mt-16">
+            <h2 className={headingClass}>Part B of the scheme</h2>
 
-      <tr>
-        <td className="h-16 border border-black px-4 align-top">
-          {">10,000 to<=20,000"}
-        </td>
-        <td className="h-16 border border-black px-4 align-top">
-          2000
-        </td>
-      </tr>
+            <div className={`mt-6 space-y-6 ${bodyClass}`}>
+              {Partb.map((item) => (
+                <p key={item}>{item}</p>
+              ))}
 
-      <tr>
-        <td className="h-16 border border-black px-4 align-top">
-          {"> 20,000-1,00,000"}
-          <sup>#</sup>
-        </td>
-        <td className="h-16 border border-black px-4 align-top">
-          3000
-        </td>
-      </tr>
-    </tbody>
-  </table>
-     </div>
-     <p 
-     className="text-shadow-black text-black">* In respect of employees getting EPF wages below ₹ 10,000, the incentive at the rate of 10% of EPF wage will be provided as an additional risk mitigation measure. <br /><br/>
-      # Incentive will be paid in respect of new employees with Gross wage up to ₹ 1 Lakh at the time of joining the establishment.<br/><br/>
-      i. For the manufacturing sector, the incentive to the employer will continue for the third and the fourth year.<br/><br/>
-       ii. The benefits will be provided to all eligible establishments on six monthly lump sum basis after filing of six completed months’ ECRs based on eligibility of the employer and employee as elaborated in previous paras. Further, the benefits will be provided in respect of those First Timers and Re-joinees who complete six months of employment with the same employer. The calculation of benefits will take into account the net additional employment generated.<br/><br/>
-        iii. The benefits to the employer will not accrue for any month in which the employer is not eligible as per the threshold criteria laid out in the Scheme. In such cases, there will be no extension of the incentive period.  
-      </p>
-      <h4
-           className = "font-bold">Detailed Guidelines for calculation under this part will be issued separately.
-      </h4>
-    </div>
+              <h3 className={subHeadingClass}>6.2.1. Amount of Incentive/ Benefit and Periodicity</h3>
+              <p>
+                Under this Part of the Scheme, incentives will be provided to the employer at the following rates for two years in respect of employment generated over and above the baseline fulfilling the threshold limit i.e., at least 2 additional employments with baseline of less than 50 and at least 5 additional employments with baseline of 50 or above. The criteria for providing incentive to the employer will be as under:
+              </p>
 
-    <h2 className="font-bold">6.2.2. Eligibility of establishments under Part B:</h2>
-    <p>While calculating the incentive amount for a given month, eligibility of the establishment
-       will be determined based on the threshold criteria, as detailed below </p>
-<h3 className="font-medium">i. Determining Eligibility for the first six months:  </h3>
-<p>For being eligible in the first 6 months of joining the scheme, the average number of employees in the establishment as per the ECR filed for those
-   six months should be more than or equal to the Baseline plus the Threshold limit. </p>
-   <h4 className="font-bold">ii. Determining Eligibility from 7th month to 12th month: </h4>
-   <p>For being eligible in any particular month, between 7th to 12th month, the average number of employees in the establishments as per the ECR filed, from 1st month up to that month should be more than or equal to the Baseline plus the Threshold limit. </p>
-   <h4 className="font-bold">iii.  Determining Eligibility from 13 month onwards:</h4>
-   <p>For being eligible in any particular month, from 13th month onwards, the average number of employees in the establishments as per the ECR filed for preceding 11 months and that particular month, should be more or equal to than the Baseline plus the Threshold limit </p> <br/>
-   <p> <strong>6.2.3.</strong> Further, the incentive under Part B of the scheme will not be provided to such establishments against which inquiries under Section 7A/7B/7C of EPF & MP Act, 1952 and Para 26-B of the EPF Scheme, 1952 are pending, and if concluded, the said order has been appealed in a legal forum or not complied with otherwise.</p>
+              <div className="mt-8 overflow-x-auto">
+                <table className="mx-auto w-full min-w-162.5 max-w-226.25 table-fixed border-collapse bg-white text-center text-base text-slate-700 sm:text-lg">
+                  <caption className="sr-only">
+                    EPF wage slabs and monthly employer benefits
+                  </caption>
 
-<p><strong>6.2.4. </strong> The incentive under Part B of the Scheme will not be provided to establishments against which a First Information Report (FIR) has been filed by EPFO for fraudulent practices, or where inquiries relating to irregularities under the ABRY scheme or any other scheme are pending or have been decided against the establishment. </p>
-         <h2 className="font-bold">6.3. Cessation of incentives: </h2> 
-         <p>Notwithstanding anything contained in this scheme, the payment of incentives under the scheme will cease- </p>
-         <p>
-           <strong> 6.3.1.</strong>  In the event of a First Timer leaving the employment on his own volition or otherwise.<br/>
-        <strong>6.3.2. </strong>  In case of any eventuality like death, etc. of the beneficiary <br />
-          <strong>6.3.3.</strong> In the event of closure/winding up etc. of the establishment.<br/>
-         <strong>6.3.4.</strong>  In the event of any misrepresentation or fraud. </p>
+                  <colgroup>
+                    <col className="w-[37%]" />
+                    <col className="w-[63%]" />
+                  </colgroup>
 
-         <h2 className=" font-bold">6.4. Mode of Payments:</h2>
-         <p>The incentive shall be disbursed within 45 days after fulfilling the eligibility condition and filing of paid ECR as per the periodicity defined under respective Part of the scheme, through following mode of payment: </p>
+                  <thead>
+                    <tr className="bg-orange-50 text-orange-800">
+                      <th
+                        scope="col"
+                        className="border border-slate-200 px-5 py-3 align-top font-semibold leading-[1.8]"
+                      >
+                        EPF Wage Slabs of
+                        <br />
+                        Additional Employee in
+                        <br />
+                        ₹
+                      </th>
 
-         <p><strong>6.4.1.</strong>  The incentives to the employees shall be paid through (Aadhaar Bridge Payment System) Direct Benefit Transfer to their Aadhaar seeded bank accounts. </p>
-         <p><strong>6.4.2.</strong> The incentive to the establishment shall be provided as Direct Benefit Transfer to PAN linked bank account of the establishment. Where a group of establishments under the same PAN are eligible for the incentive, payment will be made to a single PAN linked bank account nominated by the group.  </p>
-<p>Provided that, in case where employees’ bank account is pending for Aadhaar seeding, the payment of incentive shall remain suspended. However, the incentives would continue to accrue during this period. Once the bank account is Aadhaar seeded, the payment including arrears would be released as per scheme guidelines. </p>          </div> <br/><br/>
-       
-       <h2 className="font-bold text-2xl">7. Rounding off </h2><br/>
-       <p className="text-lg">7.1.   For the purpose of calculation of baseline, threshold and average employment strength, averages may be rounded off to nearest integer. </p>
+                      <th
+                        scope="col"
+                        className="border border-slate-200 px-5 py-3 align-top font-semibold leading-[1.8]"
+                      >
+                        Benefit to the Employer in ₹
+                        <span className="mt-4 block">
+                          (per additional employment per month as
+                          <br />
+                          per prescribed criteria)
+                        </span>
+                      </th>
+                    </tr>
+                  </thead>
 
+                  <tbody>
+                    <tr>
+                      <td className="h-16 border border-slate-200 px-4 align-top">
+                        {"<= 10,000"}
+                        <sup>*</sup>
+                      </td>
+                      <td className="h-16 border border-slate-200 px-4 align-top">
+                        <span className="px-1">Up to 1000</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td className="h-16 border border-slate-200 px-4 align-top">
+                        {">10,000 to<=20,000"}
+                      </td>
+                      <td className="h-16 border border-slate-200 px-4 align-top">
+                        2000
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td className="h-16 border border-slate-200 px-4 align-top">
+                        {"> 20,000-1,00,000"}
+                        <sup>#</sup>
+                      </td>
+                      <td className="h-16 border border-slate-200 px-4 align-top">
+                        3000
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p className="text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
+                * In respect of employees getting EPF wages below ₹ 10,000, the incentive at the rate of 10% of EPF wage will be provided as an additional risk mitigation measure. <br /><br />
+                # Incentive will be paid in respect of new employees with Gross wage up to ₹ 1 Lakh at the time of joining the establishment.<br /><br />
+                i. For the manufacturing sector, the incentive to the employer will continue for the third and the fourth year.<br /><br />
+                ii. The benefits will be provided to all eligible establishments on six monthly lump sum basis after filing of six completed months’ ECRs based on eligibility of the employer and employee as elaborated in previous paras. Further, the benefits will be provided in respect of those First Timers and Re-joinees who complete six months of employment with the same employer. The calculation of benefits will take into account the net additional employment generated.<br /><br />
+                iii. The benefits to the employer will not accrue for any month in which the employer is not eligible as per the threshold criteria laid out in the Scheme. In such cases, there will be no extension of the incentive period.
+              </p>
+
+              <p className="font-semibold text-slate-900">
+                Detailed Guidelines for calculation under this part will be issued separately.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12 lg:mt-16">
+            <h2 className={headingClass}>6.2.2. Eligibility of establishments under Part B:</h2>
+
+            <div className={`mt-6 space-y-6 ${bodyClass}`}>
+              <p>
+                While calculating the incentive amount for a given month, eligibility of the establishment will be determined based on the threshold criteria, as detailed below
+              </p>
+
+              <h3 className={subHeadingClass}>i. Determining Eligibility for the first six months:</h3>
+              <p>
+                For being eligible in the first 6 months of joining the scheme, the average number of employees in the establishment as per the ECR filed for those six months should be more than or equal to the Baseline plus the Threshold limit.
+              </p>
+
+              <h3 className={subHeadingClass}>ii. Determining Eligibility from 7th month to 12th month:</h3>
+              <p>
+                For being eligible in any particular month, between 7th to 12th month, the average number of employees in the establishments as per the ECR filed, from 1st month up to that month should be more than or equal to the Baseline plus the Threshold limit.
+              </p>
+
+              <h3 className={subHeadingClass}>iii.  Determining Eligibility from 13 month onwards:</h3>
+              <p>
+                For being eligible in any particular month, from 13th month onwards, the average number of employees in the establishments as per the ECR filed for preceding 11 months and that particular month, should be more or equal to than the Baseline plus the Threshold limit
+              </p>
+
+              <p>
+                <strong>6.2.3.</strong> Further, the incentive under Part B of the scheme will not be provided to such establishments against which inquiries under Section 7A/7B/7C of EPF & MP Act, 1952 and Para 26-B of the EPF Scheme, 1952 are pending, and if concluded, the said order has been appealed in a legal forum or not complied with otherwise.
+              </p>
+
+              <p>
+                <strong>6.2.4. </strong> The incentive under Part B of the Scheme will not be provided to establishments against which a First Information Report (FIR) has been filed by EPFO for fraudulent practices, or where inquiries relating to irregularities under the ABRY scheme or any other scheme are pending or have been decided against the establishment.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12 lg:mt-16">
+            <h2 className={headingClass}>6.3. Cessation of incentives:</h2>
+
+            <div className={`mt-6 space-y-6 ${bodyClass}`}>
+              <p>
+                Notwithstanding anything contained in this scheme, the payment of incentives under the scheme will cease-
+              </p>
+              <p>
+                <strong>6.3.1.</strong> In the event of a First Timer leaving the employment on his own volition or otherwise.<br />
+                <strong>6.3.2. </strong> In case of any eventuality like death, etc. of the beneficiary <br />
+                <strong>6.3.3.</strong> In the event of closure/winding up etc. of the establishment.<br />
+                <strong>6.3.4.</strong> In the event of any misrepresentation or fraud.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12 lg:mt-16">
+            <h2 className={headingClass}>6.4. Mode of Payments:</h2>
+
+            <div className={`mt-6 space-y-6 ${bodyClass}`}>
+              <p>
+                The incentive shall be disbursed within 45 days after fulfilling the eligibility condition and filing of paid ECR as per the periodicity defined under respective Part of the scheme, through following mode of payment:
+              </p>
+
+              <p>
+                <strong>6.4.1.</strong> The incentives to the employees shall be paid through (Aadhaar Bridge Payment System) Direct Benefit Transfer to their Aadhaar seeded bank accounts.
+              </p>
+              <p>
+                <strong>6.4.2.</strong> The incentive to the establishment shall be provided as Direct Benefit Transfer to PAN linked bank account of the establishment. Where a group of establishments under the same PAN are eligible for the incentive, payment will be made to a single PAN linked bank account nominated by the group.
+              </p>
+              <p>
+                Provided that, in case where employees’ bank account is pending for Aadhaar seeding, the payment of incentive shall remain suspended. However, the incentives would continue to accrue during this period. Once the bank account is Aadhaar seeded, the payment including arrears would be released as per scheme guidelines.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12 lg:mt-16">
+            <h2 className={headingClass}>7. Rounding off</h2>
+
+            <div className={`mt-6 space-y-6 ${bodyClass}`}>
+              <p>
+                7.1.   For the purpose of calculation of baseline, threshold and average employment strength, averages may be rounded off to nearest integer.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </main>

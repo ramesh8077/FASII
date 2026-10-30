@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Building2 } from "lucide-react";
+import PageHero from "../common/PageHero.jsx";
 
 const secretariatOffices = [
   {
@@ -94,14 +95,7 @@ const services = [
 export default function Secretariat() {
   return (
     <main className="bg-white text-slate-900">
-      <header className="bg-slate-100">
-        <div className="mx-auto max-w-7xl px-5 py-8 sm:px-8 lg:px-12">
-          <h1 className="text-3xl font-semibold sm:text-4xl">Secretariat</h1>
-          <p className="mt-3 text-slate-600">
-            <Link to="/about" className="hover:text-orange-700">About FASII</Link> / Secretariat
-          </p>
-        </div>
-      </header>
+      <PageHero title="Secretariat" />
 
       <section className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-12">
         <div className="mb-10">

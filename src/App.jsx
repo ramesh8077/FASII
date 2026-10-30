@@ -2,6 +2,12 @@ import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Layout/Header/Header.jsx";
 import HeroSlider from "./components/Layout/Home/HeroSlider.jsx";
+import HomeOverview from "./components/Layout/Home/HomeOverview.jsx";
+import HomeExplore from "./components/Layout/Home/HomeExplore.jsx";
+import HomeMoreSections from "./components/Layout/Home/HomeMoreSections.jsx";
+import HomeNotifications from "./components/Layout/Home/HomeNotifications.jsx";
+import HomeKnowledge from "./components/Layout/Home/HomeKnowledge.jsx";
+import HomeMembership from "./components/Layout/Home/HomeMembership.jsx";
 import QuickAccess from "./components/Layout/common/QuickAccess.jsx";
 import PressRelease from "./components/Layout/Home/PressRelease.jsx";
 import EventHighlights from "./components/Layout/Home/EventHighlights.jsx";
@@ -51,6 +57,10 @@ import Latest_News from "./components/Media/Latest_News.jsx";
 import Zone1 from "./components/Zone/Zone1.jsx";
 import Zone2 from "./components/Zone/Zone2.jsx";
 import Zone3 from "./components/Zone/Zone3.jsx";
+import Zone4 from "./components/Zone/Zone4.jsx";
+
+import International from "./components/International/International.jsx";
+import States from "./components/States/States.jsx";
 
 function App() {
   return (
@@ -65,8 +75,14 @@ function App() {
             element={
               <>
                 <HeroSlider />
+                <HomeOverview />
+                <HomeNotifications />
                 <PressRelease />
                 <EventHighlights />
+                <HomeExplore />
+                <HomeKnowledge />
+                <HomeMoreSections />
+                <HomeMembership />
               </>
                                             }
                                  />
@@ -90,6 +106,7 @@ function App() {
           <Route path="/knowledge/annual-reports" element={<AnnualReports />} />
 
           {/* Sectors Pages */}
+          <Route path="/sectors" element={<MSME />} />
           <Route path="/sectors/agriculture" element={<Agriculture />} />
           <Route path="/sectors/finance" element={<Banking />} />
           <Route path="/sectors/education" element={<Education />} />
@@ -102,12 +119,14 @@ function App() {
           <Route path="/sectors/tourism" element={<Tourism />} />
 
             {/* Services Pages */}
+          <Route path="/services" element={<Citizen_Services />} />
           <Route path="/services/YojanaIntro" element={<Citizen_Services />} />
           <Route path="/services/applications" element={<Online_Applications />} />
           <Route path="/services/grievances" element={<Public_Grievances />} />
           <Route path="/services/downloads" element={<Downloads />} />
 
  {/* Media Pages */}
+          <Route path="/media" element={<Latest_News />} />
           <Route path="/media/photos" element={<Photo />} />
           <Route path="/media/press/releases" element={<Press />} />
           <Route path="/media/videos" element={<Video />} />
@@ -118,6 +137,11 @@ function App() {
           <Route path="/1/north" element={<Zone1 />} />
           <Route path="/2/south" element={<Zone2 />} />
           <Route path="/3/east" element={<Zone3 />} />
+          <Route path="/4/west" element={<Zone4 />} />
+
+          {/* International & States Pages */}
+          <Route path="/international" element={<International />} />
+          <Route path="/states" element={<States />} />
 
           {/* Unmatched pages */}
           <Route

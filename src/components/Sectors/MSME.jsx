@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FileText, Users, TrendingUp, Award, Download } from "lucide-react";
+import PageHero from "../Layout/common/PageHero";
 
 const msmeInitiatives = [
   {
@@ -50,29 +51,7 @@ const schemes = [
 export default function MSME() {
   return (
     <main className="bg-white text-slate-900">
-      <header className="bg-[#f5f5f5]">
-        <div className="mx-auto max-w-375 px-5 py-7 sm:px-8 lg:px-12">
-          <h1 className="text-3xl font-medium tracking-tight sm:text-4xl">
-            MSME Sector
-          </h1>
-
-          <nav aria-label="Breadcrumb" className="mt-4">
-            <ol className="flex flex-wrap items-center gap-3 text-sm font-semibold text-slate-500 sm:text-base">
-              <li>
-                <Link to="/" className="transition-colors hover:text-orange-600">
-                  Home
-                </Link>
-              </li>
-              <li aria-hidden="true" className="text-slate-800">/</li>
-              <li>
-                <span className="text-slate-600">Sectors</span>
-              </li>
-              <li aria-hidden="true" className="text-slate-800">/</li>
-              <li aria-current="page" className="text-slate-600">MSME</li>
-            </ol>
-          </nav>
-        </div>
-      </header>
+      <PageHero title="MSME Sector" />
 
       <section className="mx-auto max-w-375 px-5 py-12 sm:px-8 lg:px-12">
         {/* Introduction */}

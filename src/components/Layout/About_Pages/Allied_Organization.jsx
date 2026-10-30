@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Building2, MapPin, Mail } from "lucide-react";
+import PageHero from "../common/PageHero.jsx";
 
 const memberAssociations = [
   {
@@ -101,14 +102,7 @@ const partnerOrganizations = [
 export default function Allied_Organization() {
   return (
     <main className="bg-white text-slate-900">
-      <header className="bg-slate-100">
-        <div className="mx-auto max-w-7xl px-5 py-8 sm:px-8 lg:px-12">
-          <h1 className="text-3xl font-semibold sm:text-4xl">Member Associations & Partners</h1>
-          <p className="mt-3 text-slate-600">
-            <Link to="/about" className="hover:text-orange-700">About FASII</Link> / Member Associations
-          </p>
-        </div>
-      </header>
+      <PageHero title="Member Associations & Partners" />
 
       <section className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-12">
         <div className="mb-10">

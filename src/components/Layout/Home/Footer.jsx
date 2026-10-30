@@ -1,6 +1,65 @@
+import { ArrowUpRight, Mail, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { contactInfo, organization } from "../../../data/fasiiContent.js";
+
+const exploreLinks = [
+  ["About FASII", "/about"],
+  ["Office bearers", "/about/office-bearers"],
+  ["Sectors", "/sectors/msme"],
+  ["News & events", "/media/news"],
+];
+
+const resourceLinks = [
+  ["Applications", "/services/applications"],
+  ["Public grievances", "/services/grievances"],
+  ["Publications", "/knowledge/publications"],
+  ["Downloads", "/services/downloads"],
+];
 
 export default function Footer() {
-  return <footer className="bg-slate-950 text-white"><div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-8 md:grid-cols-2 lg:px-12"><div><Link to="/" className="flex items-center gap-3"><img src="/site-logo-final.png" alt="FASII logo" className="h-14 w-14 rounded-full bg-white object-contain"/><span><strong className="block text-sm uppercase tracking-widest text-orange-400">FASII</strong><span className="text-sm font-semibold">Federation of Associations of Small Industries of India</span></span></Link><p className="mt-5 max-w-lg text-sm leading-7 text-slate-300">The Federation of Associations of Small Industries of India (FASII) brings together associations representing small industries across the country, supporting growth through vendor development, awareness programmes, and policy advocacy.</p></div><div><h2 className="text-lg font-semibold text-orange-400">Contact FASII</h2><address className="mt-4 space-y-4 text-sm not-italic leading-6 text-slate-300"><div><p className="font-medium text-white">Shri Saileswar Panda<br/>National President</p><p className="mt-2 text-xs text-slate-400">Khasmohal Balichak Polley Unnayan Samity</p><p className="mt-2 flex gap-2"><MapPin size={17} className="mt-1 shrink-0"/>Village & Post: Radha Nagar, Howrah – 711 310, West Bengal</p><a href="tel:+919433218387" className="flex items-center gap-2 hover:text-white"><Phone size={16}/>09433218387</a><a href="mailto:saileswarpanda@gmail.com" className="flex items-center gap-2 hover:text-white"><Mail size={16}/>saileswarpanda@gmail.com</a></div><div className="border-t border-white/10 pt-4"><p className="font-medium text-white">Shri B. Karthikeyan<br/>Regional Chairman – Southern Region</p><p className="mt-2 flex gap-2"><MapPin size={17} className="mt-1 shrink-0"/>Plot No. 29, 1st Main Road, 3rd Cross Street, Sabari Nagar Extn., Mugalivakkam, Chennai – 600125</p><a href="tel:+919444182838" className="flex items-center gap-2 hover:text-white"><Phone size={16}/>09444182838</a><a href="mailto:fasiichairman@gmail.com" className="flex items-center gap-2 hover:text-white"><Mail size={16}/>fasiichairman@gmail.com</a></div></address></div></div><div className="border-t border-white/10"><div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-5 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12"><p>© {new Date().getFullYear()} Federation of Associations of Small Industries of India</p><Link to="/about/office-bearers" className="hover:text-white">View FASII office bearers</Link></div></div></footer>;
+  const contact = contactInfo.southernRegion;
+
+  return (
+    <footer className="border-t-4 border-orange-500 bg-slate-950 text-white">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-10 sm:px-8 sm:py-12 lg:grid-cols-[1.25fr_.8fr_.8fr_1.15fr] lg:gap-x-16 lg:gap-y-10 lg:px-12">
+        <div className="-ml-3 sm:-ml-4 lg:-ml-6">
+          <Link to="/" className="inline-flex items-center gap-3 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400">
+            <img src="/site-logo-final.png" alt="FASII logo" className="h-14 w-14 rounded-full bg-white object-contain ring-2 ring-orange-400" />
+            <span className="max-w-56">
+              <span className="block text-xs font-bold uppercase tracking-[.2em] text-orange-400">FASII</span>
+              <span className="mt-1 block text-sm font-semibold leading-5 text-white">Federation of Associations of Small Industries of India</span>
+            </span>
+          </Link>
+          <p className="mt-4 max-w-sm text-sm leading-6 text-slate-300">{organization.about}</p>
+        </div>
+
+        <nav aria-label="Explore FASII">
+          <h2 className="text-xs font-bold uppercase tracking-[.16em] text-orange-300">Explore</h2>
+          <ul className="mt-4 space-y-3">{exploreLinks.map(([label, path]) => <li key={path}><Link to={path} className="text-sm text-slate-300 transition hover:text-white">{label}</Link></li>)}</ul>
+        </nav>
+
+        <nav aria-label="Resources and services">
+          <h2 className="text-xs font-bold uppercase tracking-[.16em] text-orange-300">Resources</h2>
+          <ul className="mt-4 space-y-3">{resourceLinks.map(([label, path]) => <li key={path}><Link to={path} className="text-sm text-slate-300 transition hover:text-white">{label}</Link></li>)}</ul>
+        </nav>
+
+        <address className="not-italic">
+          <h2 className="text-xs font-bold uppercase tracking-[.16em] text-orange-300">Contact · Southern Region</h2>
+          <p className="mt-4 text-sm font-semibold text-white">{contact.name}</p>
+          <p className="mt-1 text-xs leading-5 text-slate-400">{contact.address}</p>
+          <div className="mt-4 space-y-2.5">
+            <a href={`tel:+91${contact.phone.replace(/\D/g, "").replace(/^0/, "")}`} className="flex items-center gap-2 text-sm text-slate-300 transition hover:text-white"><Phone size={15} className="text-orange-400" />{contact.phone}</a>
+            <a href={`mailto:${contact.email}`} className="flex items-center gap-2 break-all text-sm text-slate-300 transition hover:text-white"><Mail size={15} className="shrink-0 text-orange-400" />{contact.email}</a>
+          </div>
+        </address>
+      </div>
+
+      <div className="border-t border-white/10 bg-slate-900/70">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-4 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12">
+          <p>© {new Date().getFullYear()} FASII · Supporting India’s small industries</p>
+          <Link to="/about/office-bearers" className="inline-flex items-center gap-1.5 font-medium text-slate-300 transition hover:text-orange-300">Meet the office bearers <ArrowUpRight size={14} /></Link>
+        </div>
+      </div>
+    </footer>
+  );
 }

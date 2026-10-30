@@ -1,40 +1,13 @@
-import { Link } from "react-router-dom";
+import PageHero from "../common/PageHero.jsx";
+
 export default function History() {
-    return (
-      <main className="bg-white text-slate-900">
-        {/* Page title and breadcrumb */}
-        <header className="bg-[#f5f5f5]">
-          <div className="mx-auto max-w-375 px-5 py-7 sm:px-8 lg:px-12">
-            <h1 className="text-3xl font-medium tracking-tight sm:text-4xl">
-              About Us
-            </h1>
+  return (
+    <main className="bg-white text-slate-900">
+      <PageHero title="History of FASII" />
 
-            <nav aria-label="Breadcrumb" className="mt-4">
-              <ol className="flex flex-wrap items-center gap-3 text-sm font-semibold text-slate-500 sm:text-base">
-                <li>
-                  <Link
-                    to="/about"
-                    className="transition-colors hover:text-orange-600 focus-visible:outline-2 focus-visible:outline-orange-500"
-                  >
-                    About Us
-                  </Link>
-                </li>
-
-                <li aria-hidden="true" className="text-slate-800">
-                  /
-                </li>
-
-                <li aria-current="page" className="text-slate-600">
-                  History        
-                  </li>
-
-              </ol>
-          
-            </nav>
-
-            <div className="mt-8 sm:mt-10 lg:mt-12 space-y-8">
-
-              {/* Vision Section */}
+      <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-12">
+        <div className="space-y-8">
+          {/* Vision Section */}
               <section className="bg-white p-8 rounded-lg shadow-md">
                 <div className="text-center mb-6">
                   <span className="inline-block h-1 w-16 bg-orange-500 mb-4" aria-hidden="true" />
@@ -90,10 +63,8 @@ export default function History() {
                   </p>
                 </div>
               </section>
-
-            </div>
-          </div>
-        </header>
-      </main>
-    );
+        </div>
+      </div>
+    </main>
+  );
 }

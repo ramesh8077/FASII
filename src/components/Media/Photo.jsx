@@ -1,41 +1,70 @@
-import { Link } from "react-router-dom";
-const eventPhotos = Object.entries(import.meta.glob("../../assets/Images/FASIIEvents/*.jpeg", { eager: true, query: "?url", import: "default" }))
-  .sort(([first], [second]) => first.localeCompare(second));
+import PageHero from "../Layout/common/PageHero";
+
+const eventPhotos = Object.entries(
+  import.meta.glob("../../assets/Images/FASIIEvents/*.jpeg", {
+    eager: true,
+    query: "?url",
+    import: "default",
+  })
+).sort(([first], [second]) => first.localeCompare(second));
+
+const eventCaptions = {
+  "sidbi-conclave-main.jpeg":
+    "FASII office bearers at the National Conclave for Industry Associations organised by SIDBI in New Delhi",
+  "msme-connect-main.jpeg":
+    "FASII MSME Connect'26 Vendor Development Programme cum Industrial Exhibition at Virudhunagar, Tamil Nadu",
+  "msme-awareness-main.jpeg":
+    "MSME Awareness Programme and FASII Annual General Meeting at Avadi, Chennai",
+  "hosur-schemes-main.jpeg":
+    "FASII Southern Regional Chairman addressing Hosur Industrial Association on MSME schemes",
+};
+
+const photoAlt = (path) => {
+  const file = path.split("/").pop();
+  return (
+    eventCaptions[file] ??
+    "Photograph from a FASII programme and industry engagement"
+  );
+};
+
+const photoCaption = (path) => {
+  const file = path.split("/").pop();
+  if (eventCaptions[file]) return eventCaptions[file];
+  const stamp = file.replace("WhatsApp Image ", "").replace(".jpeg", "");
+  return `FASII event photograph · ${stamp}`;
+};
+
 export default function Photo() {
-    return (
-      <main className="bg-white text-slate-900">
-        {/* Page title and breadcrumb */}
-        <header className="bg-[#f5f5f5]">
-          <div className="mx-auto max-w-375 px-5 py-7 sm:px-8 lg:px-12">
-            <h1 className="text-3xl font-medium tracking-tight sm:text-4xl">
-Photo           </h1>
+  return (
+    <main className="bg-white text-slate-900">
+      <PageHero title="Photo Gallery" />
 
-            <nav aria-label="Breadcrumb" className="mt-4">
-              <ol className="flex flex-wrap items-center gap-3 text-sm font-semibold text-slate-500 sm:text-base">
-                <li>
-                  <Link
-                    to="/about"
-                    className="transition-colors hover:text-orange-600 focus-visible:outline-2 focus-visible:outline-orange-500"
-                  >
-Media         </Link>
-                </li>
+      <section className="mx-auto max-w-375 px-5 py-12 sm:px-8 lg:px-12">
+        <p className="max-w-3xl text-lg leading-7 text-slate-600">
+          A photographic record of FASII conclaves, vendor development programmes,
+          awareness initiatives and industry engagements with associations across
+          India.
+        </p>
 
-                <li aria-hidden="true" className="text-slate-800">
-                  /
-                </li>
-
-                <li aria-current="page" className="text-slate-600">
-                 Photo            </li>
-              </ol>
-            </nav>
-          </div>
-        </header>
-        <section className="mx-auto grid max-w-7xl gap-4 px-5 py-10 sm:grid-cols-2 sm:px-8 lg:grid-cols-3 lg:px-12">
-          {eventPhotos.map(([path, image]) => <figure key={path} className="overflow-hidden rounded-lg bg-slate-100">
-            <img src={image} alt="FASII event photograph" loading="lazy" className="aspect-[4/3] w-full object-cover" />
-            <figcaption className="px-4 py-3 text-sm text-slate-600">FASII programme and industry engagement · {path.split("/").pop().replace("WhatsApp Image ", "").replace(".jpeg", "")}</figcaption>
-          </figure>)}
-        </section>
-      </main>
-    );
-  }
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {eventPhotos.map(([path, image]) => (
+            <figure
+              key={path}
+              className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:border-orange-200 hover:shadow-lg"
+            >
+              <img
+                src={image}
+                alt={photoAlt(path)}
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <figcaption className="px-4 py-3 text-sm leading-6 text-slate-600">
+                {photoCaption(path)}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}

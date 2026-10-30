@@ -1,155 +1,135 @@
 import { Link } from "react-router-dom";
-import { FileText, TrendingUp, Download, Calendar } from "lucide-react";
+import { FileText, Download, Info, ExternalLink } from "lucide-react";
+import PageHero from "../Layout/common/PageHero";
+import { documents } from "../../data/fasiiContent";
+import bannerImage from "../../assets/Images/FASIIEvents/sidbi-conclave-main.jpeg";
 
-const reports = [
-  {
-    id: 1,
-    title: "MSME Sector Performance Analysis 2025-26",
-    description: "Comprehensive analysis of MSME sector performance, covering production, exports, employment, and growth trends across different regions of India",
-    date: "October 2026",
-    category: "Sector Analysis",
-    pages: "78 pages",
-    highlights: ["Regional growth patterns", "Export performance", "Employment data"]
-  },
-  {
-    id: 2,
-    title: "Impact of Quality Control Orders on Small Industries",
-    description: "Research study examining the implementation and impact of Quality Control Orders on small and medium enterprises",
-    date: "September 2026",
-    category: "Policy Impact",
-    pages: "52 pages",
-    highlights: ["Compliance challenges", "Cost implications", "Market access"]
-  },
-  {
-    id: 3,
-    title: "Vendor Development Programmes: Success Stories",
-    description: "Case studies and best practices from successful vendor development initiatives connecting MSMEs with government departments and CPSUs",
-    date: "August 2026",
-    category: "Case Studies",
-    pages: "64 pages",
-    highlights: ["Success factors", "Partnership models", "Lessons learned"]
-  },
-  {
-    id: 4,
-    title: "Small Industries and Digital Transformation",
-    description: "Study on digital adoption among small industries, challenges faced, and opportunities for technology-driven growth",
-    date: "July 2026",
-    category: "Technology",
-    pages: "48 pages",
-    highlights: ["Digital readiness", "Technology barriers", "Best practices"]
-  },
-  {
-    id: 5,
-    title: "Access to Finance for MSMEs: Trends and Challenges",
-    description: "Analysis of financing patterns, institutional support, and challenges faced by MSMEs in accessing credit and working capital",
-    date: "June 2026",
-    category: "Finance",
-    pages: "56 pages",
-    highlights: ["Credit gap analysis", "Institutional lending", "Alternative finance"]
-  }
+const reportRows = [
+  { id: 1, category: "Research Report", title: "To be updated", status: "To be updated" },
+  { id: 2, category: "Research Report", title: "To be updated", status: "To be updated" },
+  { id: 3, category: "Research Report", title: "To be updated", status: "To be updated" },
+  { id: 4, category: "Research Report", title: "To be updated", status: "To be updated" },
 ];
 
 export default function ResearchReports() {
   return (
     <main className="bg-white text-slate-900">
-      <header className="bg-[#f5f5f5]">
-        <div className="mx-auto max-w-375 px-5 py-7 sm:px-8 lg:px-12">
-          <h1 className="text-3xl font-medium tracking-tight sm:text-4xl">
-            Research Reports
-          </h1>
-
-          <nav aria-label="Breadcrumb" className="mt-4">
-            <ol className="flex flex-wrap items-center gap-3 text-sm font-semibold text-slate-500 sm:text-base">
-              <li>
-                <Link to="/" className="transition-colors hover:text-orange-600">
-                  Home
-                </Link>
-              </li>
-              <li aria-hidden="true" className="text-slate-800">/</li>
-              <li>
-                <span className="text-slate-600">Knowledge Hub</span>
-              </li>
-              <li aria-hidden="true" className="text-slate-800">/</li>
-              <li aria-current="page" className="text-slate-600">Research Reports</li>
-            </ol>
-          </nav>
-        </div>
-      </header>
+      <PageHero title="Research Reports" image={bannerImage} />
 
       <section className="mx-auto max-w-375 px-5 py-12 sm:px-8 lg:px-12">
-        <div className="mb-8">
-          <p className="text-lg leading-7 text-slate-600">
-            Explore in-depth research reports on small industries sector covering policy analysis, sector studies, and impact assessments.
-          </p>
-        </div>
+        <p className="max-w-3xl text-lg leading-7 text-slate-600">
+          FASII undertakes research and documentation on issues affecting small
+          industries, including policy developments, compliance requirements and
+          access to schemes. This section brings together research reports and
+          reference material prepared by the federation for member associations.
+        </p>
 
-        <div className="space-y-6">
-          {reports.map((report) => (
-            <article key={report.id} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="flex items-start gap-5">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-orange-100 text-orange-600">
-                  <FileText size={28} />
-                </div>
+        <div className="mt-10 grid gap-10 lg:grid-cols-3">
+          <div className="lg:col-span-2">
+            <h2 className="text-xl font-semibold text-slate-950">Report Library</h2>
+            <p className="mt-2 text-sm leading-6 text-slate-600">
+              Reports will be listed here as they are finalised.
+            </p>
 
-                <div className="flex-1">
-                  <div className="flex flex-wrap items-start justify-between gap-4">
-                    <div className="flex-1">
-                      <p className="text-xs font-bold uppercase tracking-wider text-orange-700">
-                        {report.category}
-                      </p>
-                      <h2 className="mt-2 text-xl font-semibold text-slate-900">
-                        {report.title}
-                      </h2>
-                      <p className="mt-3 leading-7 text-slate-700">
-                        {report.description}
-                      </p>
-
-                      <div className="mt-4 flex items-center gap-6 text-sm text-slate-600">
-                        <span className="flex items-center gap-2">
-                          <Calendar size={16} className="text-orange-600" />
-                          {report.date}
-                        </span>
-                        <span>{report.pages}</span>
-                      </div>
-
-                      <div className="mt-4">
-                        <p className="text-xs font-semibold uppercase tracking-wider text-slate-600">Key Highlights:</p>
-                        <div className="mt-2 flex flex-wrap gap-2">
-                          {report.highlights.map((highlight, index) => (
-                            <span key={index} className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">
-                              {highlight}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    <button className="flex shrink-0 items-center gap-2 rounded-lg bg-orange-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-orange-700 transition-colors">
-                      <Download size={16} />
-                      Download
-                    </button>
-                  </div>
-                </div>
+            <div className="mt-5 overflow-hidden rounded-lg border border-slate-200">
+              <div className="overflow-x-auto">
+                <table className="w-full min-w-[34rem] border-collapse text-left">
+                  <caption className="sr-only">
+                    List of FASII research reports. Entries are to be updated.
+                  </caption>
+                  <thead className="bg-[#fffaf5]">
+                    <tr className="border-b border-slate-200">
+                      <th scope="col" className="px-5 py-4 text-xs font-bold uppercase tracking-wider text-orange-700">
+                        Category
+                      </th>
+                      <th scope="col" className="px-5 py-4 text-xs font-bold uppercase tracking-wider text-orange-700">
+                        Title
+                      </th>
+                      <th scope="col" className="px-5 py-4 text-xs font-bold uppercase tracking-wider text-orange-700">
+                        Status
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {reportRows.map((row) => (
+                      <tr key={row.id} className="border-b border-slate-100 last:border-b-0">
+                        <td className="px-5 py-4 align-top">
+                          <span className="inline-flex items-center gap-2 text-sm font-semibold text-slate-700">
+                            <FileText size={16} className="text-orange-600" aria-hidden="true" />
+                            {row.category}
+                          </span>
+                        </td>
+                        <td className="px-5 py-4 align-top text-sm font-medium text-slate-900">
+                          {row.title}
+                        </td>
+                        <td className="px-5 py-4 align-top">
+                          <span className="inline-block rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
+                            {row.status}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
-            </article>
-          ))}
-        </div>
-
-        <div className="mt-12 rounded-lg bg-slate-50 p-8">
-          <div className="flex items-start gap-4">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-orange-100 text-orange-600">
-              <TrendingUp size={24} />
             </div>
-            <div className="flex-1">
-              <h3 className="text-lg font-semibold text-slate-900">Research Collaboration</h3>
-              <p className="mt-2 text-sm text-slate-700">
-                FASII welcomes collaboration opportunities with academic institutions, research organizations, and industry bodies for conducting research on small industries sector. For partnership inquiries, please contact the National Secretariat.
+
+            <div className="mt-6 flex items-start gap-3 rounded-lg border border-orange-200 bg-orange-50 p-5">
+              <Info size={20} className="mt-0.5 shrink-0 text-orange-600" aria-hidden="true" />
+              <p className="text-sm leading-6 text-slate-700">
+                Research report titles and download links are being compiled and will
+                be published here shortly.
               </p>
-              <Link to="/about/office-bearers" className="mt-4 inline-flex items-center text-sm font-semibold text-orange-700 hover:text-orange-900">
-                Contact Us →
-              </Link>
             </div>
           </div>
+
+          <aside aria-label="Downloadable documents" className="lg:col-span-1">
+            <div className="rounded-lg border border-slate-200 bg-[#fffaf5] p-6">
+              <h2 className="text-lg font-semibold text-slate-950">Downloads</h2>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                Documents currently available for download from FASII.
+              </p>
+
+              <ul className="mt-4 space-y-3">
+                {documents.map((document) => (
+                  <li key={document.id}>
+                    <a
+                      href={document.file}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group flex items-start gap-3 rounded-lg border border-slate-200 bg-white p-4 transition-colors hover:border-orange-200"
+                    >
+                      <Download
+                        size={18}
+                        className="mt-0.5 shrink-0 text-orange-600"
+                        aria-hidden="true"
+                      />
+                      <span className="flex-1">
+                        <span className="block text-sm font-semibold text-slate-900 group-hover:text-orange-700">
+                          {document.title}
+                        </span>
+                        <span className="mt-1 block text-xs font-semibold uppercase tracking-wider text-orange-700">
+                          {document.category}
+                        </span>
+                      </span>
+                      <ExternalLink
+                        size={16}
+                        className="mt-0.5 shrink-0 text-slate-400"
+                        aria-hidden="true"
+                      />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                to="/knowledge/policies"
+                className="mt-5 inline-flex items-center text-sm font-semibold text-orange-700 hover:text-orange-900"
+              >
+                View all policy documents
+              </Link>
+            </div>
+          </aside>
         </div>
       </section>
     </main>
