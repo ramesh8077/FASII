@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { FileText, Download, Info, ExternalLink } from "lucide-react";
 import PageHero from "../Layout/common/PageHero";
 import { documents } from "../../data/fasiiContent";
-import bannerImage from "../../assets/Images/FASIIEvents/sidbi-conclave-main.jpeg";
 
 const reportRows = [
   { id: 1, category: "Analysis", title: "Market trends to be updated", status: "Draft" },
@@ -13,7 +12,7 @@ const reportRows = [
 export default function ResearchReports() {
   return (
     <main className="bg-white text-slate-900">
-      <PageHero title="Research Reports" image={bannerImage} />
+      <PageHero title="Research Reports" />
 
       <section className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-12">
         <p className="mb-8 border-l-4 border-amber-500 pl-4 max-w-4xl text-base leading-7 text-slate-700">
