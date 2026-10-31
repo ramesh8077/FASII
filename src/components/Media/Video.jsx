@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { PlayCircle, Calendar, Clock } from "lucide-react";
+import { Play, Calendar, Clock, ExternalLink } from "lucide-react";
 import PageHero from "../Layout/common/PageHero";
 
 import sidbiConclave from "../../assets/Images/FASIIEvents/sidbi-conclave-main.jpeg";
@@ -52,66 +52,67 @@ const videos = [
 
 export default function Video() {
   return (
-    <main className="bg-white text-slate-900">
+    <main className="bg-slate-50 text-slate-900 font-sans min-h-screen pb-16">
       <PageHero title="Video Gallery" />
 
-      <section className="mx-auto max-w-375 px-5 py-12 sm:px-8 lg:px-12">
-        <div className="mb-8">
-          <p className="max-w-3xl text-lg leading-7 text-slate-600">
+      <section className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-12">
+        <div className="mb-10 border-l-4 border-amber-500 pl-4 bg-white p-4 border-y border-r border-slate-200">
+          <p className="text-sm font-medium leading-6 text-slate-700">
             Watch highlights from FASII's events, programmes, conclaves, and industry addresses across India.
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {videos.map((video) => (
-            <article key={video.id} className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md">
-              <div className="relative aspect-video bg-slate-200">
+            <article key={video.id} className="border border-slate-300 bg-white flex flex-col group">
+              <div className="relative w-full aspect-video bg-slate-900 border-b-4 border-[#b45309] overflow-hidden">
                 <img
                   src={video.thumbnail}
                   alt={video.thumbnailAlt}
                   loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="absolute inset-0 h-full w-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                 />
-                <div className="absolute inset-0 bg-slate-950/30 transition-colors group-hover:bg-slate-950/20" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-orange-600 text-white opacity-90 transition-opacity group-hover:opacity-100">
-                    <PlayCircle size={32} />
+                  <div className="flex h-12 w-12 items-center justify-center bg-[#b45309] text-white border-2 border-white/50 shadow-lg">
+                    <Play size={20} className="ml-1" />
                   </div>
                 </div>
-                <div className="absolute bottom-2 right-2 rounded bg-black/75 px-2 py-1 text-xs font-semibold text-white">
-                  <Clock size={12} className="mr-1 inline" />
-                  {video.duration}
+                <div className="absolute bottom-2 right-2 bg-slate-900 border border-slate-700 px-2 py-1 text-[10px] font-bold text-white tracking-widest flex items-center gap-1">
+                  <Clock size={10} /> {video.duration}
                 </div>
               </div>
 
-              <div className="p-5">
-                <p className="text-xs font-bold uppercase tracking-wider text-orange-700">
+              <div className="p-5 flex-grow flex flex-col">
+                <p className="text-[10px] font-bold uppercase tracking-widest text-amber-600 mb-2">
                   {video.category}
                 </p>
-                <h3 className="mt-2 text-lg font-semibold leading-snug text-slate-900">
+                <h3 className="text-base font-bold leading-tight text-slate-900 mb-3">
                   {video.title}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">
+                <p className="text-xs leading-5 text-slate-600 mb-4 flex-grow">
                   {video.description}
                 </p>
-                <div className="mt-4 flex items-center gap-2 text-xs text-slate-500">
-                  <Calendar size={14} />
-                  {video.date}
+                
+                <div className="flex items-center justify-between border-t border-slate-200 pt-3 mt-auto">
+                  <div className="flex items-center gap-1.5 text-[11px] font-bold text-slate-500 uppercase">
+                    <Calendar size={12} /> {video.date}
+                  </div>
                 </div>
               </div>
             </article>
           ))}
         </div>
 
-        <div className="mt-12 rounded-xl border border-slate-200 bg-[#fffaf5] p-8 text-center">
-          <p className="text-slate-700">
+        <div className="mt-16 border-2 border-slate-300 bg-white p-8 text-center shadow-sm">
+          <h3 className="text-sm font-bold uppercase text-slate-900 tracking-widest mb-2">Digital Archive Notice</h3>
+          <p className="text-xs text-slate-600 max-w-2xl mx-auto leading-6 mb-6">
             Video content from FASII events is being compiled and will be available soon. Check back for updates or view event photos in the meantime.
           </p>
           <Link
             to="/media/photos"
-            className="mt-5 inline-flex rounded-lg bg-orange-600 px-5 py-3 font-semibold text-white hover:bg-orange-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-700"
+            className="inline-flex items-center gap-2 border border-[#b45309] bg-[#b45309] px-6 py-2.5 text-xs font-bold uppercase text-white hover:bg-slate-900 hover:border-slate-900 transition-colors"
           >
-            View Photo Gallery
+            View Photo Gallery <ExternalLink size={14} />
           </Link>
         </div>
       </section>

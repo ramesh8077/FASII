@@ -1,8 +1,8 @@
 import PageHero from "../Layout/common/PageHero";
 import { documents } from "../../data/fasiiContent.js";
+import { FileText, Download, ShieldCheck } from "lucide-react";
 
 // Supplied scheme wording and clause numbering are retained.
-// The source does not contain a numbered clause 12.2.2; none is invented here.
 const sections = [
   {
     "number": "8",
@@ -242,11 +242,11 @@ const sections = [
 const schemeDocument = documents.find((document) => document.id === "pmvbry");
 
 function ContentBlock({ block }) {
-  const bodyClass = "text-base leading-8 text-slate-700 sm:text-lg sm:leading-9";
+  const bodyClass = "text-sm leading-6 text-slate-700 md:text-base md:leading-8";
 
   if (block.type === "subheading") {
     return (
-      <h3 className="mt-9 flex items-baseline gap-3 text-lg font-semibold leading-7 text-slate-900 sm:text-xl">
+      <h3 className="mt-8 mb-3 flex items-baseline gap-2 text-base font-bold uppercase tracking-wider text-[#b45309]">
         <span className="shrink-0 tabular-nums">{block.number}</span>
         <span>{block.text}</span>
       </h3>
@@ -254,14 +254,14 @@ function ContentBlock({ block }) {
   }
 
   if (block.type === "label") {
-    return <p className="font-semibold leading-8 text-slate-900">{block.text}</p>;
+    return <p className="font-bold text-slate-900 mt-4 mb-2">{block.text}</p>;
   }
 
   if (block.type === "list") {
     return (
       <ol
         type="i"
-        className={`${bodyClass} ml-7 list-outside list-[lower-roman] space-y-3 pl-3 marker:text-orange-700 sm:ml-12`}
+        className={`${bodyClass} list-outside list-[lower-roman] space-y-2 pl-6 marker:text-[#b45309] marker:font-bold border-l-2 border-slate-200 ml-4`}
       >
         {block.items.map((item, itemIndex) => (
           <li key={itemIndex} className="pl-2">{item}</li>
@@ -272,78 +272,106 @@ function ContentBlock({ block }) {
 
   if (block.type === "clause") {
     return (
-      <div className="grid grid-cols-1 gap-1 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-4">
-        <span className={`${bodyClass} font-semibold tabular-nums text-slate-900`}>
+      <div className="flex gap-4 mt-4">
+        <span className={`${bodyClass} font-bold text-slate-900 shrink-0`}>
           {block.number}
         </span>
-        <p className={bodyClass}>{block.text}</p>
+        <p className={`${bodyClass} text-justify`}>{block.text}</p>
       </div>
     );
   }
 
-  return <p className={bodyClass}>{block.text}</p>;
+  return <p className={`${bodyClass} text-justify mt-4`}>{block.text}</p>;
 }
 
 export default function Downloads() {
   return (
-    <main className="bg-white text-slate-900">
-      <PageHero title="Special Provisions for Exempted Establishments" />
+    <main className="bg-slate-50 text-slate-900 font-sans min-h-screen pb-16">
+      <PageHero title="Official Policy Document & Provisions" />
 
-      <section className="mx-auto max-w-375 px-5 py-12 sm:px-8 lg:px-12">
-        <aside className="mb-12 flex flex-wrap items-center justify-between gap-4 rounded-lg border border-orange-200 bg-orange-50 p-5 sm:p-6">
-          <div>
-            <p className="text-base font-semibold text-slate-900">{schemeDocument.title}</p>
-            <p className="mt-1 text-sm leading-6 text-slate-700">{schemeDocument.description}</p>
+      <section className="mx-auto max-w-6xl px-5 mt-10 sm:px-8 lg:px-12">
+        
+        {/* Document Header & Download Block */}
+        <aside className="mb-10 flex flex-col sm:flex-row items-center justify-between gap-6 border-2 border-slate-300 bg-white p-6 md:p-8 shadow-sm">
+          <div className="flex items-center gap-4">
+            <FileText size={48} className="text-[#b45309] shrink-0" />
+            <div>
+              <p className="text-lg font-black uppercase text-slate-900">{schemeDocument.title}</p>
+              <p className="mt-1 text-sm font-medium leading-6 text-slate-600 border-l-4 border-amber-500 pl-3">{schemeDocument.description}</p>
+            </div>
           </div>
           <a
             href={schemeDocument.file}
             download
-            className="rounded-lg bg-orange-600 px-5 py-3 font-semibold text-white hover:bg-orange-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-700"
+            className="flex items-center gap-2 border-2 border-[#b45309] bg-[#b45309] px-6 py-3 font-bold uppercase text-white transition hover:bg-white hover:text-[#b45309] whitespace-nowrap"
           >
-            Download PDF
+            <Download size={18} /> Download Gazette PDF
           </a>
         </aside>
 
-        <nav aria-label="On this page" className="mb-12 max-w-4xl border border-slate-200 bg-white p-5 sm:p-6">
-          <p className="mb-4 text-base font-semibold text-slate-900">On this page</p>
-          <ol className="grid list-none gap-3 md:grid-cols-2 md:gap-x-8">
-            {sections.map((section) => (
-              <li key={section.number}>
-                <a
-                  href={`#provision-${section.number}`}
-                  className="flex items-baseline gap-3 text-sm leading-6 text-slate-700 transition-colors hover:text-orange-700 sm:text-base"
-                >
-                  <span className="shrink-0 font-semibold tabular-nums text-orange-700">{section.number}.</span>
-                  <span>{section.title}</span>
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
+        <div className="grid lg:grid-cols-[300px_1fr] gap-8 items-start">
+          
+          {/* Left Navigation (Strict Sidebar) */}
+          <nav aria-label="On this page" className="sticky top-6 border border-slate-300 bg-white shadow-sm">
+            <div className="bg-slate-800 text-white px-5 py-4">
+              <p className="text-sm font-bold uppercase tracking-widest">Document Index</p>
+            </div>
+            <ol className="divide-y divide-slate-200">
+              {sections.map((section) => (
+                <li key={section.number}>
+                  <a
+                    href={`#provision-${section.number}`}
+                    className="flex items-baseline gap-3 px-5 py-4 text-sm font-semibold text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#b45309]"
+                  >
+                    <span className="shrink-0 font-bold text-amber-600">Section {section.number}.</span>
+                    <span>{section.title}</span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+            <div className="bg-amber-50 p-4 border-t border-slate-300">
+                <img 
+                  src="https://loremflickr.com/400/200/document,stamp/all" 
+                  alt="Official Government Document stamp" 
+                  className="w-full h-32 object-cover border border-slate-300 opacity-80"
+                />
+            </div>
+          </nav>
 
-        <article aria-label="Scheme provisions, sections 8 to 13" className="max-w-4xl space-y-12 sm:space-y-14">
-          {sections.map((section) => (
-            <section
-              key={section.number}
-              id={`provision-${section.number}`}
-              aria-labelledby={`provision-title-${section.number}`}
-              className="scroll-mt-28 border-t border-slate-200 pt-7 sm:pt-9"
-            >
-              <h2
-                id={`provision-title-${section.number}`}
-                className="mb-7 flex items-baseline gap-3 text-2xl font-semibold leading-8 text-slate-900 sm:gap-4 sm:text-3xl sm:leading-9"
-              >
-                <span className="shrink-0 tabular-nums">{section.number}.</span>
-                <span>{section.title}</span>
-              </h2>
-              <div className="space-y-6">
-                {section.blocks.map((block, index) => (
-                  <ContentBlock key={index} block={block} />
-                ))}
-              </div>
-            </section>
-          ))}
-        </article>
+          {/* Right Content Area (Gazette Style) */}
+          <div className="bg-white border border-slate-300 p-8 md:p-12 shadow-sm relative">
+            <div className="absolute top-6 right-6 opacity-5">
+              <ShieldCheck size={180} />
+            </div>
+
+            <article aria-label="Scheme provisions, sections 8 to 13" className="relative z-10 space-y-12">
+              {sections.map((section) => (
+                <section
+                  key={section.number}
+                  id={`provision-${section.number}`}
+                  aria-labelledby={`provision-title-${section.number}`}
+                  className="scroll-mt-28"
+                >
+                  <div className="bg-[#fff8ec] border-l-4 border-[#b45309] px-5 py-3 mb-6">
+                    <h2
+                      id={`provision-title-${section.number}`}
+                      className="flex items-baseline gap-3 text-lg font-bold uppercase tracking-wide text-orange-950"
+                    >
+                      <span className="shrink-0">Section {section.number}.</span>
+                      <span>{section.title}</span>
+                    </h2>
+                  </div>
+                  <div className="pl-2">
+                    {section.blocks.map((block, index) => (
+                      <ContentBlock key={index} block={block} />
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </article>
+          </div>
+        </div>
+
       </section>
     </main>
   );

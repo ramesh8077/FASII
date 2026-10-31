@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Building, Hammer, Truck, Construction, HardHat, Wrench } from "lucide-react";
+import { Building, Hammer, Truck, Construction, HardHat, Wrench, ChevronRight } from "lucide-react";
 import PageHero from "../Layout/common/PageHero";
 
 const initiatives = [
@@ -61,112 +61,127 @@ const challenges = [
 
 export default function Infrastructure() {
   return (
-    <main className="bg-white text-slate-900">
+    <main className="bg-white text-slate-900 font-sans">
       <PageHero title="Infrastructure & Construction" />
 
-      <section className="mx-auto max-w-375 px-5 py-12 sm:px-8 lg:px-12">
-        <div className="mb-12">
-          <div className="prose prose-slate max-w-none">
-            <p className="text-lg leading-8 text-slate-700">
-              Infrastructure development is critical to India's economic growth, and MSMEs play a vital role as contractors, material suppliers, and service providers. From road construction to building materials manufacturing, small industries contribute significantly to India's infrastructure expansion under initiatives like PM Gati Shakti and National Infrastructure Pipeline.
-            </p>
-          </div>
+      {/* Intro & Main Wide Image */}
+      <section className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-12 border-b border-slate-200">
+        <div className="mb-10 text-center">
+          <p className="mx-auto max-w-4xl text-lg leading-8 text-slate-700">
+            Infrastructure development is critical to India's economic growth, and MSMEs play a vital role as contractors, material suppliers, and service providers. From road construction to building materials manufacturing, small industries contribute significantly to India's infrastructure expansion under initiatives like PM Gati Shakti and National Infrastructure Pipeline.
+          </p>
         </div>
+        
+        <div className="mx-auto max-w-6xl border-4 border-slate-200 p-2 bg-slate-50">
+           {/* IMAGE 1: 100% Working Live Image */}
+           <img 
+              src="https://loremflickr.com/1200/400/construction,bridge/all" 
+              alt="Massive highway and bridge construction site" 
+              className="w-full h-80 md:h-[400px] object-cover"
+           />
+        </div>
+      </section>
 
-        <div className="mb-12">
-          <h2 className="mb-6 text-2xl font-semibold text-slate-900">FASII Support for Infrastructure Sector MSMEs</h2>
-          <div className="grid gap-6 sm:grid-cols-2">
+      {/* Support Initiatives Grid */}
+      <section className="bg-slate-50 border-b border-slate-200">
+        <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-12">
+          <h2 className="mb-8 text-2xl font-bold text-orange-950 uppercase tracking-wider text-center">
+            FASII Support for Infrastructure Sector MSMEs
+          </h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {initiatives.map((item, index) => (
-              <div key={index} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-orange-100 text-orange-700">
-                  <item.icon size={24} />
+              <div key={index} className="flex flex-col rounded-none border border-slate-300 bg-white p-6 transition-all hover:bg-orange-50 border-t-4 border-t-amber-500">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center bg-[#b45309] text-white">
+                  <item.icon size={28} />
                 </div>
-                <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
+                <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
+      </section>
 
-        <div className="mb-12">
-          <h2 className="mb-6 text-2xl font-semibold text-slate-900">Key Focus Areas</h2>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {focusAreas.map((area, index) => (
-              <div key={index} className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-4">
-                <div className="h-2 w-2 shrink-0 rounded-full bg-orange-600" />
-                <span className="text-sm font-medium text-slate-700">{area}</span>
+      <section className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-12">
+        <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr]">
+          
+          {/* Left Column: Challenges & Solutions */}
+          <div>
+            <h2 className="mb-6 text-2xl font-bold text-slate-900 border-l-8 border-[#b45309] pl-4 uppercase">
+              Challenges & FASII Solutions
+            </h2>
+            <div className="space-y-4">
+              {challenges.map((item, index) => (
+                <div key={index} className="border-l-2 border-[#b45309] bg-slate-50 p-6">
+                  <h3 className="font-bold text-lg text-slate-900">{item.challenge}</h3>
+                  <p className="mt-2 text-sm text-slate-700 leading-6">
+                    <span className="font-bold text-white bg-amber-600 px-2 py-1 text-xs uppercase mr-2">FASII Solution</span> 
+                    {item.solution}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Schemes Block */}
+            <div className="mt-10 border border-slate-300">
+              <div className="bg-[#b45309] p-4 text-white">
+                <h2 className="text-lg font-bold uppercase tracking-wider">Government Schemes for Infrastructure MSMEs</h2>
               </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mb-12">
-          <h2 className="mb-6 text-2xl font-semibold text-slate-900">Challenges & FASII Solutions</h2>
-          <div className="space-y-4">
-            {challenges.map((item, index) => (
-              <div key={index} className="rounded-lg border border-slate-200 bg-white p-6">
-                <h3 className="font-semibold text-slate-900">{item.challenge}</h3>
-                <p className="mt-2 text-sm text-slate-700">
-                  <span className="font-medium text-orange-700">FASII Solution:</span> {item.solution}
-                </p>
+              <div className="p-6 bg-white">
+                <ul className="space-y-4 text-sm text-slate-700">
+                  <li className="flex items-start gap-3 border-b border-slate-100 pb-4">
+                    <ChevronRight className="text-amber-500 shrink-0 mt-0.5" size={20} />
+                    <p><strong className="text-slate-900">PM Gati Shakti:</strong> Integrated infrastructure development creating opportunities for material suppliers and contractors.</p>
+                  </li>
+                  <li className="flex items-start gap-3 border-b border-slate-100 pb-4">
+                    <ChevronRight className="text-amber-500 shrink-0 mt-0.5" size={20} />
+                    <p><strong className="text-slate-900">PMAY - Housing for All:</strong> Opportunities in affordable housing construction, building materials, and technology.</p>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <ChevronRight className="text-amber-500 shrink-0 mt-0.5" size={20} />
+                    <p><strong className="text-slate-900">Smart Cities Mission:</strong> Urban infrastructure projects creating demand for construction services.</p>
+                  </li>
+                </ul>
               </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mb-12 rounded-lg bg-orange-50 p-8">
-          <h2 className="mb-4 text-xl font-semibold text-slate-900">Government Schemes for Infrastructure MSMEs</h2>
-          <div className="space-y-3 text-sm text-slate-700">
-            <div className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-600" />
-              <p><strong>PM Gati Shakti - National Master Plan:</strong> Integrated infrastructure development creating opportunities for material suppliers and contractors</p>
-            </div>
-            <div className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-600" />
-              <p><strong>PMAY - Housing for All:</strong> Opportunities in affordable housing construction, building materials, and housing technology</p>
-            </div>
-            <div className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-600" />
-              <p><strong>Smart Cities Mission:</strong> Urban infrastructure projects creating demand for construction services and smart infrastructure solutions</p>
-            </div>
-            <div className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-600" />
-              <p><strong>MSME Procurement Preference:</strong> Reservation for MSMEs in government infrastructure procurement and subcontracting requirements</p>
             </div>
           </div>
-        </div>
 
-        <div className="mb-12 rounded-lg border-2 border-orange-200 bg-orange-50 p-8">
-          <h2 className="mb-4 text-xl font-semibold text-slate-900">National Infrastructure Pipeline & MSME Opportunities</h2>
-          <p className="text-slate-700">
-            India's ₹111 lakh crore National Infrastructure Pipeline creates immense opportunities for MSMEs in:
-          </p>
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-lg bg-white p-4">
-              <h3 className="font-semibold text-slate-900">Road & Highway Projects</h3>
-              <p className="mt-2 text-sm text-slate-600">
-                Construction contracts, material supply, equipment rental, and maintenance services for highway infrastructure
+          {/* Right Column: Focus Areas & Imagery */}
+          <div className="space-y-8">
+            <div className="border border-slate-300 p-2 bg-slate-50">
+               {/* IMAGE 2: 100% Working Live Image */}
+               <img 
+                  src="https://loremflickr.com/600/400/industry,crane/all" 
+                  alt="Industrial cranes and construction management" 
+                  className="w-full h-64 object-cover"
+                />
+            </div>
+
+            <div className="bg-[#fff8ec] border border-amber-200 p-6">
+              <h2 className="mb-4 text-lg font-bold text-orange-950 uppercase border-b-2 border-amber-300 pb-2">
+                Key Focus Areas
+              </h2>
+              <div className="grid grid-cols-1 gap-3">
+                {focusAreas.map((area, index) => (
+                  <div key={index} className="flex items-center gap-3 bg-white p-3 border border-amber-100 shadow-sm">
+                    <div className="h-2 w-2 shrink-0 bg-amber-500" />
+                    <span className="text-sm font-medium text-slate-800">{area}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-[#b45309] p-6 text-center text-white">
+              <h3 className="text-lg font-bold uppercase tracking-wider">Infrastructure Support</h3>
+              <p className="mt-3 text-sm text-orange-100 mb-6">
+                FASII assists infrastructure MSMEs with contractor registration, NSIC rating, project finance facilitation, and access to government opportunities.
               </p>
-            </div>
-            <div className="rounded-lg bg-white p-4">
-              <h3 className="font-semibold text-slate-900">Urban Infrastructure</h3>
-              <p className="mt-2 text-sm text-slate-600">
-                Metro rail, water supply, sewerage projects, and smart city development creating multiple MSME opportunities
-              </p>
+              <Link to="/about/allied-organisations" className="inline-block bg-white text-[#b45309] px-6 py-3 font-bold uppercase hover:bg-amber-100 transition-colors">
+                Connect with Member Associations
+              </Link>
             </div>
           </div>
-        </div>
-
-        <div className="rounded-lg border-2 border-slate-200 bg-white p-8 text-center">
-          <h3 className="text-xl font-semibold text-slate-900">Infrastructure Sector MSME Support</h3>
-          <p className="mt-3 text-slate-700">
-            FASII assists infrastructure MSMEs with contractor registration, NSIC rating, project finance facilitation, and access to government infrastructure opportunities.
-          </p>
-          <div className="mt-6">
-            <Link to="/about/allied-organisations" className="inline-flex items-center gap-2 rounded-lg bg-orange-600 px-6 py-3 font-semibold text-white hover:bg-orange-700">
-              Connect with Member Associations
-            </Link>
-          </div>
+          
         </div>
       </section>
     </main>

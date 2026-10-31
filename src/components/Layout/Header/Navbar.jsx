@@ -3,7 +3,12 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { ChevronDown, ChevronRight, Home, Menu, X } from "lucide-react";
 import { navigationItems } from "../../../data/navigationData.js";
 
-export default function Navbar() {
+/* Same horizontal padding as every page section, so the menu lines up with content. */
+const CONTAINER = "mx-auto max-w-7xl px-5 sm:px-8 lg:px-12";
+
+/* `ticker` is optional: when passed, it fills all the space to the right of the
+   desktop menu items, all the way to the screen edge. */
+export default function Navbar({ ticker = null }) {
   const [activeMenu, setActiveMenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -65,13 +70,13 @@ export default function Navbar() {
   };
 
   const desktopLinkClass = ({ isActive }) =>
-    `flex min-h-14 items-center px-1.5 text-[11px] font-semibold
-     uppercase tracking-wide transition-colors xl:px-2.5
-     focus-visible:outline-2 focus-visible:outline-offset-[-4px]
-     focus-visible:outline-orange-400 ${
+    `flex min-h-12 items-center px-3 text-[11px] font-semibold
+     uppercase tracking-wide transition-colors
+     focus-visible:outline-2 focus-visible:-outline-offset-4
+     focus-visible:outline-amber-300 ${
        isActive
-         ? "bg-orange-600 text-white"
-         : "text-slate-800 hover:bg-orange-50 hover:text-orange-700"
+         ? "bg-amber-400 text-[#431407]"
+         : "text-white hover:bg-white/10"
      }`;
 
   return (
@@ -84,11 +89,18 @@ export default function Navbar() {
           closeMenus();
         }
       }}
-      className="relative min-w-0 flex-1 bg-white"
+      className="sticky top-0 z-50 w-full border-b-[3px] border-amber-400 bg-[#4a1707] shadow-md [--pad:1.25rem] sm:[--pad:2rem] lg:[--pad:3rem]"
     >
-      <div className="min-w-0">
-        {/* Desktop navigation */}
-        <ul className="hidden items-stretch justify-between xl:flex">
+      {/* Desktop: full-width row. Left gutter lines the menu up with the page
+          content, the ticker then takes everything that is left to the screen edge. */}
+      <div className="hidden items-stretch xl:flex">
+        <div
+          aria-hidden="true"
+          className="shrink-0"
+          style={{ width: "max(var(--pad), calc((100% - 80rem) / 2 + var(--pad)))" }}
+        />
+
+        <ul className="-ml-3 flex shrink-0 items-stretch">
           <li>
             <NavLink
               to="/"
@@ -97,7 +109,7 @@ export default function Navbar() {
               onClick={closeMenus}
               className={desktopLinkClass}
             >
-              <Home size={19} />
+              <Home size={18} />
             </NavLink>
           </li>
 
@@ -108,7 +120,7 @@ export default function Navbar() {
 
             if (!item.children) {
               return (
-                <li key={item.label}>
+                <li key={item.label} className="border-l border-white/15">
                   <NavLink
                     to={item.path}
                     onClick={closeMenus}
@@ -124,12 +136,12 @@ export default function Navbar() {
             const alignRight = index > navigationItems.length / 2;
 
             return (
-       <li
-  key={item.label}
-  className="relative"
-  onMouseEnter={() => setActiveMenu(item.label)}
-  onMouseLeave={() => setActiveMenu(null)}
->
+              <li
+                key={item.label}
+                className="relative border-l border-white/15"
+                onMouseEnter={() => setActiveMenu(item.label)}
+                onMouseLeave={() => setActiveMenu(null)}
+              >
                 <button
                   ref={(element) => {
                     triggerRefs.current[item.label] = element;
@@ -139,14 +151,14 @@ export default function Navbar() {
                   aria-expanded={isOpen}
                   aria-controls={panelId}
                   onClick={() => toggleMenu(item.label)}
-                  className={`flex min-h-14 items-center gap-1 px-1.5
-                    text-[11px] font-semibold uppercase tracking-wide xl:px-2.5
+                  className={`flex min-h-12 items-center gap-1 px-3
+                    text-[11px] font-semibold uppercase tracking-wide
                     transition-colors focus-visible:outline-2
                     focus-visible:-outline-offset-4
-                    focus-visible:outline-orange-400 ${
+                    focus-visible:outline-amber-300 ${
                       isOpen || isSectionActive(item)
-                        ? "bg-orange-600 text-white"
-                        : "text-slate-800 hover:bg-orange-50 hover:text-orange-700"
+                        ? "bg-amber-400 text-[#431407]"
+                        : "text-white hover:bg-white/10"
                     }`}
                 >
                   {item.label}
@@ -164,37 +176,38 @@ export default function Navbar() {
                   id={panelId}
                   hidden={!isOpen}
                   className={`absolute top-full z-50 overflow-hidden
-                    rounded-b-xl border border-slate-200 bg-white
-                    shadow-[0_18px_40px_rgba(15,23,42,0.15)] ${
+                    border-t-4 border-amber-400 bg-white
+                    shadow-[0_18px_40px_rgba(67,20,7,0.25)] ${
                       alignRight ? "right-0" : "left-0"
                     } ${wideMenu ? "w-140" : "w-72"}`}
                 >
-                  <div className="border-b border-orange-100 bg-orange-50 px-5 py-4">
-                    <p className="text-xs font-bold uppercase tracking-widest text-orange-700">
+                  <div className="bg-orange-50 px-5 py-3">
+                    <p className="text-xs font-bold uppercase tracking-widest text-orange-800">
                       {item.label}
                     </p>
                   </div>
 
                   <ul
                     aria-labelledby={buttonId}
-                    className={`grid gap-1 p-3 ${
+                    className={`grid ${
                       wideMenu ? "grid-cols-2" : "grid-cols-1"
                     }`}
                   >
                     {item.children.map((child) => (
-                      <li key={child.path}>
+                      <li key={child.path} className="border-t border-orange-100">
                         <NavLink
                           to={child.path}
                           end
                           onClick={closeMenus}
                           className={({ isActive }) =>
                             `group flex h-full items-center justify-between
-                             gap-3 rounded-lg px-3 py-3 text-sm
+                             gap-3 border-l-4 px-4 py-3 text-sm
                              transition-colors focus-visible:outline-2
+                             focus-visible:-outline-offset-2
                              focus-visible:outline-orange-500 ${
                                isActive
-                                 ? "bg-orange-50 font-semibold text-orange-700"
-                                 : "text-slate-700 hover:bg-orange-50 hover:text-orange-700"
+                                 ? "border-amber-500 bg-amber-50 font-semibold text-orange-800"
+                                 : "border-transparent text-slate-700 hover:border-amber-400 hover:bg-amber-50 hover:text-orange-700"
                              }`
                           }
                         >
@@ -203,7 +216,7 @@ export default function Navbar() {
                           <ChevronRight
                             size={14}
                             aria-hidden="true"
-                            className="shrink-0 text-slate-900 transition-transform group-hover:translate-x-0.5"
+                            className="shrink-0 text-orange-400 transition-transform group-hover:translate-x-0.5"
                           />
                         </NavLink>
                       </li>
@@ -215,42 +228,48 @@ export default function Navbar() {
           })}
         </ul>
 
-        {/* Mobile/tablet toolbar */}
-        <div className="flex min-h-12 items-center justify-end xl:hidden">
-          <Link
-            to="/"
-            onClick={closeMenus}
-            className="sr-only"
-          >
-            <Home size={18} aria-hidden="true" />
-            Home
-          </Link>
+        {ticker && (
+          <div className="ml-4 flex min-w-0 flex-1 items-center border-l border-white/15 pl-4 pr-4">
+            {ticker}
+          </div>
+        )}
+      </div>
 
-          <button
-            ref={mobileButtonRef}
-            type="button"
-            aria-expanded={mobileOpen}
-            aria-controls="mobile-navigation"
-            aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
-            onClick={() => {
-              setMobileOpen((current) => !current);
-              setActiveMenu(null);
-            }}
-            className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-black hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-orange-400"
-          >
-            {mobileOpen ? "Close" : "Menu"}
-            {mobileOpen ? <X size={21} /> : <Menu size={21} />}
-          </button>
-        </div>
+      {/* Mobile/tablet toolbar */}
+      <div className={`${CONTAINER} flex min-h-12 items-center justify-between xl:hidden`}>
+        <Link
+          to="/"
+          onClick={closeMenus}
+          className="flex items-center gap-2 text-sm font-semibold text-white"
+        >
+          <Home size={18} aria-hidden="true" />
+          Home
+        </Link>
+
+        <button
+          ref={mobileButtonRef}
+          type="button"
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-navigation"
+          aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
+          onClick={() => {
+            setMobileOpen((current) => !current);
+            setActiveMenu(null);
+          }}
+          className="flex items-center gap-2 bg-amber-400 px-4 py-2 text-sm font-bold text-[#431407] hover:bg-amber-300 focus-visible:outline-2 focus-visible:outline-white"
+        >
+          {mobileOpen ? "Close" : "Menu"}
+          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
       </div>
 
       {/* Mobile accordion navigation */}
       <div
         id="mobile-navigation"
         hidden={!mobileOpen}
-        className="absolute inset-x-0 top-full z-50 max-h-[65dvh] overflow-y-auto overscroll-contain border-b border-slate-200 bg-white shadow-xl xl:hidden"
+        className="absolute inset-x-0 top-full z-50 max-h-[65dvh] overflow-y-auto overscroll-contain border-b-4 border-amber-400 bg-white shadow-xl xl:hidden"
       >
-        <ul className="mx-auto max-w-7xl divide-y divide-slate-100 px-4">
+        <ul className={`${CONTAINER} divide-y divide-orange-100`}>
           {navigationItems.map((item, index) => {
             const isOpen = activeMenu === item.label;
             const panelId = `mobile-nav-panel-${index}`;
@@ -278,7 +297,7 @@ export default function Navbar() {
                         }
                       }}
                       className={`flex min-h-14 w-full items-center
-                        justify-between gap-4 rounded px-2 text-left
+                        justify-between gap-4 px-2 text-left
                         text-sm font-semibold focus-visible:outline-2
                         focus-visible:outline-orange-500 ${
                           isOpen || isSectionActive(item)
@@ -300,7 +319,7 @@ export default function Navbar() {
                     <ul
                       id={panelId}
                       hidden={!isOpen}
-                      className="mb-3 space-y-1 rounded-xl bg-slate-50 p-2"
+                      className="mb-3 border-l-4 border-amber-400 bg-amber-50"
                       onKeyDown={(event) => {
                         if (event.key === "Escape") {
                           event.stopPropagation();
@@ -312,18 +331,19 @@ export default function Navbar() {
                       }}
                     >
                       {item.children.map((child) => (
-                        <li key={child.path}>
+                        <li key={child.path} className="border-b border-orange-100 last:border-b-0">
                           <NavLink
                             to={child.path}
                             end
                             onClick={closeMenus}
                             className={({ isActive }) =>
-                              `block rounded-lg px-4 py-3 text-sm
+                              `block px-4 py-3 text-sm
                                focus-visible:outline-2
+                               focus-visible:-outline-offset-2
                                focus-visible:outline-orange-500 ${
                                  isActive
-                                   ? "bg-orange-100 font-semibold text-orange-800"
-                                   : "text-slate-800 hover:bg-orange-50 hover:text-orange-700"
+                                   ? "bg-amber-100 font-semibold text-orange-800"
+                                   : "text-slate-800 hover:bg-amber-100 hover:text-orange-700"
                                }`
                             }
                           >
@@ -338,7 +358,7 @@ export default function Navbar() {
                     to={item.path}
                     onClick={closeMenus}
                     className={({ isActive }) =>
-                      `flex min-h-14 items-center rounded px-2
+                      `flex min-h-14 items-center px-2
                        text-sm font-semibold focus-visible:outline-2
                        focus-visible:outline-orange-500 ${
                          isActive

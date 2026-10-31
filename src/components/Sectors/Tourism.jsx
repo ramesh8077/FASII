@@ -1,172 +1,102 @@
 import { Link } from "react-router-dom";
-import { Plane, Hotel, MapPin, Camera, Utensils, Compass } from "lucide-react";
+import { Hotel, Utensils, Camera, Compass, ChevronRight } from "lucide-react";
 import PageHero from "../Layout/common/PageHero";
 
 const initiatives = [
-  {
-    icon: Hotel,
-    title: "Hospitality Services",
-    description: "Supporting small hotels, guest houses, homestays, budget accommodations, and hospitality service providers catering to domestic and international tourists."
-  },
-  {
-    icon: Utensils,
-    title: "Food & Beverage Services",
-    description: "Promoting restaurants, cafes, food courts, catering services, and culinary tourism enterprises offering local and regional cuisines."
-  },
-  {
-    icon: Camera,
-    title: "Tour Operations & Travel Services",
-    description: "Facilitating travel agencies, tour operators, adventure tourism providers, and specialized tourism service operators."
-  },
-  {
-    icon: Compass,
-    title: "Tourism Products & Handicrafts",
-    description: "Supporting manufacturers and sellers of tourism souvenirs, handicrafts, local artifacts, and tourism-related merchandise."
-  }
+  { icon: Hotel, title: "Hospitality Services", description: "Supporting small hotels, guest houses, homestays, and budget accommodations catering to tourists." },
+  { icon: Utensils, title: "Food & Beverage Services", description: "Promoting restaurants, cafes, catering services, and culinary tourism enterprises." },
+  { icon: Camera, title: "Tour Operations", description: "Facilitating travel agencies, tour operators, and adventure tourism providers." },
+  { icon: Compass, title: "Tourism Products", description: "Supporting manufacturers and sellers of tourism souvenirs, handicrafts, and local artifacts." }
 ];
 
 const focusAreas = [
-  "Budget Hotels & Homestays",
-  "Tour & Travel Agencies",
-  "Adventure Tourism Services",
-  "Restaurant & Food Services",
-  "Transport & Taxi Services",
-  "Tourist Guide Services",
-  "Handicraft & Souvenir Shops",
-  "Cultural Tourism Programs",
-  "Medical Tourism Services",
-  "Eco-Tourism Initiatives",
-  "Event Management Services",
-  "Photography & Videography"
+  "Budget Hotels & Homestays", "Tour & Travel Agencies", "Adventure Tourism Services", 
+  "Restaurant & Food Services", "Transport & Taxi Services", "Tourist Guide Services"
 ];
 
-const challenges = [
-  {
-    challenge: "Seasonality & Revenue Fluctuation",
-    solution: "Promoting off-season tourism packages, diversification of services, and working capital support during lean periods."
-  },
-  {
-    challenge: "Quality Standards & Safety",
-    solution: "Guidance on tourism classification, safety certifications, hygiene standards, and quality ratings for hospitality enterprises."
-  },
-  {
-    challenge: "Digital Marketing & Online Presence",
-    solution: "Training on digital marketing, OTA registrations, social media promotion, and online booking platform integration."
-  },
-  {
-    challenge: "Skilled Manpower & Service Quality",
-    solution: "Facilitating hospitality training programs, customer service workshops, and certification courses for tourism service providers."
-  }
+const governmentSchemes = [
+  { title: "Swadesh Darshan Scheme", desc: "Development of theme-based tourist circuits creating opportunities for local tourism service providers." },
+  { title: "PRASHAD Scheme", desc: "Pilgrimage infrastructure development benefiting hospitality and tourism MSMEs." },
+  { title: "Hunar Se Rozgar Scheme", desc: "Skill training for youth in hospitality and tourism sectors for quality service delivery." }
 ];
 
 export default function Tourism() {
   return (
-    <main className="bg-white text-slate-900">
+    <main className="bg-white text-slate-900 font-sans">
       <PageHero title="Tourism & Hospitality" />
 
-      <section className="mx-auto max-w-375 px-5 py-12 sm:px-8 lg:px-12">
-        <div className="mb-12">
-          <div className="prose prose-slate max-w-none">
-            <p className="text-lg leading-8 text-slate-700">
-              Tourism is a major employment generator and MSMEs form the backbone of India's tourism and hospitality sector. From small hotels to tour operators, handicraft vendors to restaurant services, small enterprises contribute significantly to showcasing India's rich cultural heritage, natural beauty, and diverse tourism experiences to domestic and international visitors.
-            </p>
-          </div>
-        </div>
-
-        <div className="mb-12">
-          <h2 className="mb-6 text-2xl font-semibold text-slate-900">FASII Support for Tourism Sector MSMEs</h2>
-          <div className="grid gap-6 sm:grid-cols-2">
-            {initiatives.map((item, index) => (
-              <div key={index} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-orange-100 text-orange-700">
-                  <item.icon size={24} />
-                </div>
-                <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mb-12">
-          <h2 className="mb-6 text-2xl font-semibold text-slate-900">Key Focus Areas</h2>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {focusAreas.map((area, index) => (
-              <div key={index} className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-4">
-                <div className="h-2 w-2 shrink-0 rounded-full bg-orange-600" />
-                <span className="text-sm font-medium text-slate-700">{area}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mb-12">
-          <h2 className="mb-6 text-2xl font-semibold text-slate-900">Challenges & FASII Solutions</h2>
-          <div className="space-y-4">
-            {challenges.map((item, index) => (
-              <div key={index} className="rounded-lg border border-slate-200 bg-white p-6">
-                <h3 className="font-semibold text-slate-900">{item.challenge}</h3>
-                <p className="mt-2 text-sm text-slate-700">
-                  <span className="font-medium text-orange-700">FASII Solution:</span> {item.solution}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mb-12 rounded-lg bg-orange-50 p-8">
-          <h2 className="mb-4 text-xl font-semibold text-slate-900">Government Schemes for Tourism MSMEs</h2>
-          <div className="space-y-3 text-sm text-slate-700">
-            <div className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-600" />
-              <p><strong>Swadesh Darshan Scheme:</strong> Development of theme-based tourist circuits creating opportunities for local tourism service providers</p>
+      <section className="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:px-12">
+        <div className="grid lg:grid-cols-[280px_1fr] items-start gap-8">
+          
+          {/* Strict Left Sidebar */}
+          <aside className="border border-slate-300">
+            <div className="bg-[#b45309] p-4 border-b-4 border-amber-500">
+              <h2 className="font-bold uppercase text-white text-sm tracking-widest">Key Operations</h2>
             </div>
-            <div className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-600" />
-              <p><strong>PRASHAD Scheme:</strong> Pilgrimage infrastructure development benefiting hospitality and tourism MSMEs in pilgrimage destinations</p>
+            <ul className="divide-y divide-slate-200 bg-slate-50">
+              {focusAreas.map((area, index) => (
+                <li key={index}>
+                  <a href="#" className="flex items-center p-4 text-sm font-semibold text-slate-700 hover:bg-white hover:text-[#b45309] transition-colors">
+                    <ChevronRight size={16} className="text-amber-500 mr-2 shrink-0" />
+                    {area}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <div className="p-4 bg-orange-100 border-t border-slate-300">
+              <h3 className="text-xs font-bold uppercase text-orange-900 mb-2">Need Assistance?</h3>
+              <Link to="/about/allied-organisations" className="block text-center bg-[#b45309] text-white text-sm font-bold py-2 hover:bg-orange-900">
+                Contact Member Network
+              </Link>
             </div>
-            <div className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-600" />
-              <p><strong>Incredible India Campaign:</strong> National and international tourism promotion creating demand for domestic tourism services</p>
-            </div>
-            <div className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-600" />
-              <p><strong>Hunar Se Rozgar Scheme:</strong> Skill training for youth in hospitality and tourism sectors for quality service delivery</p>
-            </div>
-          </div>
-        </div>
+          </aside>
 
-        <div className="mb-12 rounded-lg border-2 border-orange-200 bg-orange-50 p-8">
-          <h2 className="mb-4 text-xl font-semibold text-slate-900">Post-Pandemic Tourism Recovery</h2>
-          <p className="text-slate-700">
-            As tourism rebounds post-pandemic, opportunities for MSMEs include:
-          </p>
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-lg bg-white p-4">
-              <h3 className="font-semibold text-slate-900">Domestic Tourism Growth</h3>
-              <p className="mt-2 text-sm text-slate-600">
-                Rising domestic travel creating demand for homestays, local experiences, and regional tourism services
+          {/* Right Content Area */}
+          <div className="space-y-8">
+            <div className="border-l-4 border-amber-500 bg-[#fff8ec] p-5 border border-y-orange-200 border-r-orange-200">
+              <p className="text-sm leading-7 text-slate-800 text-justify">
+                Tourism is a major employment generator and MSMEs form the backbone of India's tourism and hospitality sector. From small hotels to tour operators, handicraft vendors to restaurant services, small enterprises contribute significantly to showcasing India's rich cultural heritage.
               </p>
             </div>
-            <div className="rounded-lg bg-white p-4">
-              <h3 className="font-semibold text-slate-900">Sustainable Tourism</h3>
-              <p className="mt-2 text-sm text-slate-600">
-                Growing demand for eco-tourism, rural tourism, and sustainable hospitality practices
-              </p>
+
+            {/* Structured Table Layout for Initiatives */}
+            <div className="border border-slate-300">
+              <h2 className="bg-slate-800 p-4 text-white text-sm font-bold uppercase tracking-wider">
+                FASII Sector Operations
+              </h2>
+              <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-300 bg-white">
+                {initiatives.map((item, index) => (
+                  <div key={index} className="p-5 flex gap-4 hover:bg-orange-50/50">
+                    <item.icon size={28} className="text-[#b45309] shrink-0" />
+                    <div>
+                      <h3 className="font-bold text-slate-900 text-sm mb-1">{item.title}</h3>
+                      <p className="text-xs text-slate-600 leading-5">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Scheme List Format */}
+            <div className="border border-slate-300">
+              <h2 className="bg-[#b45309] p-4 text-white text-sm font-bold uppercase tracking-wider border-b-4 border-amber-500">
+                Notified Tourism Schemes
+              </h2>
+              <ul className="divide-y divide-slate-200">
+                {governmentSchemes.map((scheme, index) => (
+                  <li key={index} className="p-5 bg-white flex flex-col md:flex-row md:items-center gap-4">
+                    <div className="md:w-1/3">
+                      <span className="font-bold text-orange-950 text-sm block">{scheme.title}</span>
+                    </div>
+                    <div className="md:w-2/3">
+                      <p className="text-sm text-slate-700">{scheme.desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-        </div>
 
-        <div className="rounded-lg border-2 border-slate-200 bg-white p-8 text-center">
-          <h3 className="text-xl font-semibold text-slate-900">Tourism Sector MSME Support</h3>
-          <p className="mt-3 text-slate-700">
-            FASII assists tourism MSMEs with licensing support, quality certifications, digital marketing guidance, and connections with tourism promotion bodies.
-          </p>
-          <div className="mt-6">
-            <Link to="/about/allied-organisations" className="inline-flex items-center gap-2 rounded-lg bg-orange-600 px-6 py-3 font-semibold text-white hover:bg-orange-700">
-              Connect with Member Associations
-            </Link>
-          </div>
         </div>
       </section>
     </main>

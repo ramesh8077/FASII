@@ -36,30 +36,36 @@ const photoCaption = (path) => {
 
 export default function Photo() {
   return (
-    <main className="bg-white text-slate-900">
+    <main className="bg-slate-50 text-slate-900 font-sans min-h-screen pb-16">
       <PageHero title="Photo Gallery" />
 
-      <section className="mx-auto max-w-375 px-5 py-12 sm:px-8 lg:px-12">
-        <p className="max-w-3xl text-lg leading-7 text-slate-600">
-          A photographic record of FASII conclaves, vendor development programmes,
-          awareness initiatives and industry engagements with associations across
-          India.
-        </p>
+      <section className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-12">
+        <div className="mb-8 border-b-2 border-slate-300 pb-4">
+          <p className="max-w-4xl text-sm font-medium leading-7 text-slate-700">
+            A photographic record of FASII conclaves, vendor development programmes,
+            awareness initiatives and industry engagements with associations across
+            India.
+          </p>
+        </div>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {eventPhotos.map(([path, image]) => (
             <figure
               key={path}
-              className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:border-orange-200 hover:shadow-lg"
+              className="border border-slate-300 bg-white p-2 shadow-sm"
             >
-              <img
-                src={image}
-                alt={photoAlt(path)}
-                loading="lazy"
-                className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <figcaption className="px-4 py-3 text-sm leading-6 text-slate-600">
-                {photoCaption(path)}
+              <div className="border border-slate-200 w-full h-48 overflow-hidden bg-slate-100">
+                <img
+                  src={image}
+                  alt={photoAlt(path)}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+              <figcaption className="bg-slate-50 border-t border-slate-200 px-3 py-3 mt-2">
+                <p className="text-xs font-bold leading-5 text-slate-700 uppercase">
+                  {photoCaption(path)}
+                </p>
               </figcaption>
             </figure>
           ))}

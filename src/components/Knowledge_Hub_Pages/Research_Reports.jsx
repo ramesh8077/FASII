@@ -5,10 +5,9 @@ import { documents } from "../../data/fasiiContent";
 import bannerImage from "../../assets/Images/FASIIEvents/sidbi-conclave-main.jpeg";
 
 const reportRows = [
-  { id: 1, category: "Research Report", title: "To be updated", status: "To be updated" },
-  { id: 2, category: "Research Report", title: "To be updated", status: "To be updated" },
-  { id: 3, category: "Research Report", title: "To be updated", status: "To be updated" },
-  { id: 4, category: "Research Report", title: "To be updated", status: "To be updated" },
+  { id: 1, category: "Analysis", title: "Market trends to be updated", status: "Draft" },
+  { id: 2, category: "Survey", title: "Industry feedback to be updated", status: "Draft" },
+  { id: 3, category: "Report", title: "Policy impact to be updated", status: "Draft" },
 ];
 
 export default function ResearchReports() {
@@ -16,54 +15,44 @@ export default function ResearchReports() {
     <main className="bg-white text-slate-900">
       <PageHero title="Research Reports" image={bannerImage} />
 
-      <section className="mx-auto max-w-375 px-5 py-12 sm:px-8 lg:px-12">
-        <p className="max-w-3xl text-lg leading-7 text-slate-600">
+      <section className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-12">
+        <p className="mb-8 border-l-4 border-amber-500 pl-4 max-w-4xl text-base leading-7 text-slate-700">
           FASII undertakes research and documentation on issues affecting small
           industries, including policy developments, compliance requirements and
-          access to schemes. This section brings together research reports and
-          reference material prepared by the federation for member associations.
+          access to schemes.
         </p>
 
-        <div className="mt-10 grid gap-10 lg:grid-cols-3">
-          <div className="lg:col-span-2">
-            <h2 className="text-xl font-semibold text-slate-950">Report Library</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              Reports will be listed here as they are finalised.
-            </p>
-
-            <div className="mt-5 overflow-hidden rounded-lg border border-slate-200">
-              <div className="overflow-x-auto">
-                <table className="w-full min-w-[34rem] border-collapse text-left">
-                  <caption className="sr-only">
-                    List of FASII research reports. Entries are to be updated.
-                  </caption>
-                  <thead className="bg-[#fffaf5]">
-                    <tr className="border-b border-slate-200">
-                      <th scope="col" className="px-5 py-4 text-xs font-bold uppercase tracking-wider text-orange-700">
-                        Category
-                      </th>
-                      <th scope="col" className="px-5 py-4 text-xs font-bold uppercase tracking-wider text-orange-700">
-                        Title
-                      </th>
-                      <th scope="col" className="px-5 py-4 text-xs font-bold uppercase tracking-wider text-orange-700">
-                        Status
-                      </th>
+        <div className="grid gap-10 lg:grid-cols-[1fr_320px]">
+          <div>
+            <div className="border border-orange-200">
+              <div className="bg-orange-700 px-5 py-3">
+                <h2 className="text-sm font-bold uppercase tracking-wider text-white">
+                  Research Report Library
+                </h2>
+              </div>
+              <div className="overflow-x-auto bg-white">
+                <table className="w-full min-w-[34rem] border-collapse text-left text-sm">
+                  <thead className="border-b-2 border-orange-200 bg-orange-50">
+                    <tr>
+                      <th scope="col" className="border-r border-orange-100 px-5 py-3.5 font-bold text-orange-900">Category</th>
+                      <th scope="col" className="border-r border-orange-100 px-5 py-3.5 font-bold text-orange-900">Report Title</th>
+                      <th scope="col" className="px-5 py-3.5 font-bold text-orange-900">Status</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody className="divide-y divide-orange-100">
                     {reportRows.map((row) => (
-                      <tr key={row.id} className="border-b border-slate-100 last:border-b-0">
-                        <td className="px-5 py-4 align-top">
-                          <span className="inline-flex items-center gap-2 text-sm font-semibold text-slate-700">
-                            <FileText size={16} className="text-orange-600" aria-hidden="true" />
+                      <tr key={row.id} className="hover:bg-[#fff8ec]">
+                        <td className="align-top border-r border-orange-100 px-5 py-4">
+                          <span className="flex items-center gap-2 font-medium text-slate-700">
+                            <FileText size={16} className="text-orange-400" />
                             {row.category}
                           </span>
                         </td>
-                        <td className="px-5 py-4 align-top text-sm font-medium text-slate-900">
+                        <td className="align-top border-r border-orange-100 px-5 py-4 font-bold text-slate-900">
                           {row.title}
                         </td>
-                        <td className="px-5 py-4 align-top">
-                          <span className="inline-block rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
+                        <td className="align-top px-5 py-4">
+                          <span className="border border-orange-200 bg-orange-50 px-2 py-1 text-xs font-semibold text-orange-800">
                             {row.status}
                           </span>
                         </td>
@@ -74,60 +63,50 @@ export default function ResearchReports() {
               </div>
             </div>
 
-            <div className="mt-6 flex items-start gap-3 rounded-lg border border-orange-200 bg-orange-50 p-5">
+            <div className="mt-6 flex items-start gap-3 border-l-4 border-amber-500 bg-[#fff8ec] p-4">
               <Info size={20} className="mt-0.5 shrink-0 text-orange-600" aria-hidden="true" />
-              <p className="text-sm leading-6 text-slate-700">
-                Research report titles and download links are being compiled and will
-                be published here shortly.
+              <p className="text-sm leading-6 text-orange-950">
+                Research report titles and official download links are being compiled and will
+                be published here shortly by the administration.
               </p>
             </div>
           </div>
 
-          <aside aria-label="Downloadable documents" className="lg:col-span-1">
-            <div className="rounded-lg border border-slate-200 bg-[#fffaf5] p-6">
-              <h2 className="text-lg font-semibold text-slate-950">Downloads</h2>
-              <p className="mt-2 text-sm leading-6 text-slate-600">
-                Documents currently available for download from FASII.
-              </p>
-
-              <ul className="mt-4 space-y-3">
+          <aside aria-label="Downloadable documents">
+            <div className="border border-orange-200 bg-white">
+              <h2 className="border-b border-orange-200 bg-orange-50 px-5 py-3 text-sm font-bold uppercase tracking-wider text-orange-900">
+                Quick Downloads
+              </h2>
+              <ul className="divide-y divide-orange-100">
                 {documents.map((document) => (
                   <li key={document.id}>
                     <a
                       href={document.file}
                       target="_blank"
                       rel="noreferrer"
-                      className="group flex items-start gap-3 rounded-lg border border-slate-200 bg-white p-4 transition-colors hover:border-orange-200"
+                      className="group flex items-start justify-between px-5 py-4 transition-colors hover:bg-[#fff8ec]"
                     >
-                      <Download
-                        size={18}
-                        className="mt-0.5 shrink-0 text-orange-600"
-                        aria-hidden="true"
-                      />
-                      <span className="flex-1">
-                        <span className="block text-sm font-semibold text-slate-900 group-hover:text-orange-700">
-                          {document.title}
-                        </span>
-                        <span className="mt-1 block text-xs font-semibold uppercase tracking-wider text-orange-700">
+                      <div className="pr-4">
+                        <span className="mb-1 block text-xs font-bold uppercase tracking-wider text-orange-600">
                           {document.category}
                         </span>
-                      </span>
-                      <ExternalLink
-                        size={16}
-                        className="mt-0.5 shrink-0 text-slate-400"
-                        aria-hidden="true"
-                      />
+                        <span className="block text-sm font-semibold text-slate-900 group-hover:text-orange-800">
+                          {document.title}
+                        </span>
+                      </div>
+                      <Download size={18} className="mt-1 shrink-0 text-orange-300 group-hover:text-orange-600" />
                     </a>
                   </li>
                 ))}
               </ul>
-
-              <Link
-                to="/knowledge/policies"
-                className="mt-5 inline-flex items-center text-sm font-semibold text-orange-700 hover:text-orange-900"
-              >
-                View all policy documents
-              </Link>
+              <div className="border-t border-orange-200 bg-orange-50 px-5 py-3">
+                <Link
+                  to="/knowledge/policies"
+                  className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-orange-800 hover:text-orange-950"
+                >
+                  <ExternalLink size={14} /> View All Policies
+                </Link>
+              </div>
             </div>
           </aside>
         </div>
