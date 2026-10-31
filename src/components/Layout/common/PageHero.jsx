@@ -1,152 +1,143 @@
 import PropTypes from "prop-types";
 
-// Photograph pool used by the inner-page hero banners. Every page resolves a
-// different photograph from this list so the same picture is not repeated.
-import connect from "../../../assets/Images/FASIIEvents/msme-connect-main.jpeg";
-import awareness from "../../../assets/Images/FASIIEvents/msme-awareness-main.jpeg";
-import conclave from "../../../assets/Images/FASIIEvents/sidbi-conclave-main.jpeg";
-import hosur from "../../../assets/Images/FASIIEvents/hosur-schemes-main.jpeg";
-import highlight1 from "../../../assets/Images/EventHighlights/highlight-1.jpg";
-import highlight2 from "../../../assets/Images/EventHighlights/highlight-2.jpg";
-import highlight3 from "../../../assets/Images/EventHighlights/highlight-3.jpg";
-import highlight4 from "../../../assets/Images/EventHighlights/highlight-4.jpg";
-import ev01 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-12 at 9.35.22 AM (1).jpeg";
-import ev02 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-12 at 9.35.22 AM.jpeg";
-import ev03 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-12 at 9.35.23 AM.jpeg";
-import ev04 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.14.55 PM (1).jpeg";
-import ev05 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.14.55 PM (2).jpeg";
-import ev06 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.14.55 PM.jpeg";
-import ev07 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.14.56 PM (1).jpeg";
-import ev08 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.14.56 PM.jpeg";
-import ev09 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.15.31 PM (1).jpeg";
-import ev10 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.15.32 PM (1).jpeg";
-import ev11 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.15.32 PM.jpeg";
-import ev12 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.15.33 PM (1).jpeg";
-import ev13 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.15.33 PM.jpeg";
-import ev14 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.18.26 PM.jpeg";
-import ev15 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.18.27 PM (1).jpeg";
-import ev16 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.18.27 PM.jpeg";
-import ev17 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.18.28 PM.jpeg";
-import ev18 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.18.29 PM (1).jpeg";
-import ev19 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.18.29 PM.jpeg";
-import ev20 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.18.30 PM.jpeg";
-import ev21 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.22.26 PM (1).jpeg";
-import ev22 from "../../../assets/Images/FASIIEvents/WhatsApp Image 2026-10-14 at 4.22.26 PM.jpeg";
+/*
+ * Hero image pool.
+ *
+ * Only landscape photographs with a real resolution of at least 1280 px wide
+ * are used here. Portrait shots (1200x1600 / 720x1280) and smaller files were
+ * removed because a 2:1 full-bleed banner crops them so hard that faces and
+ * subjects fall outside the visible band.
+ *
+ * All images are optimized WebP versions with enhanced sharpness and clarity.
+ */
+import connect from "../../../assets/Images/Hero/msme-connect-main.webp";
+import awareness from "../../../assets/Images/Hero/msme-awareness-main.webp";
+import hosur from "../../../assets/Images/Hero/hosur-schemes-main.webp";
+import highlight3 from "../../../assets/Images/Hero/highlight-3.webp";
+import evOpen1 from "../../../assets/Images/Hero/WhatsApp Image 2026-10-12 at 9.35.23 AM.webp";
+import evOpen2 from "../../../assets/Images/Hero/WhatsApp Image 2026-10-14 at 4.14.55 PM (1).webp";
+import evOpen3 from "../../../assets/Images/Hero/WhatsApp Image 2026-10-14 at 4.14.55 PM (2).webp";
+import evOpen4 from "../../../assets/Images/Hero/WhatsApp Image 2026-10-14 at 4.14.55 PM.webp";
+import evSession1 from "../../../assets/Images/Hero/WhatsApp Image 2026-10-14 at 4.15.31 PM (1).webp";
+import evSession2 from "../../../assets/Images/Hero/WhatsApp Image 2026-10-14 at 4.15.32 PM (1).webp";
+import evSession3 from "../../../assets/Images/Hero/WhatsApp Image 2026-10-14 at 4.15.32 PM.webp";
+import evSession4 from "../../../assets/Images/Hero/WhatsApp Image 2026-10-14 at 4.15.33 PM (1).webp";
+import evSession5 from "../../../assets/Images/Hero/WhatsApp Image 2026-10-14 at 4.15.33 PM.webp";
+import evWide1 from "../../../assets/Images/Hero/WhatsApp Image 2026-10-14 at 4.18.26 PM.webp";
+import evWide2 from "../../../assets/Images/Hero/WhatsApp Image 2026-10-14 at 4.18.27 PM.webp";
+import evWide3 from "../../../assets/Images/Hero/WhatsApp Image 2026-10-14 at 4.18.28 PM.webp";
+
+// Optimized WebP derivatives of oversized originals
+import outreach1280 from "../../../assets/Images/Hero/msme-outreach-1280.webp";
+import outreach1920 from "../../../assets/Images/Hero/msme-outreach-1920.webp";
+import conference1280 from "../../../assets/Images/Hero/msme-conference-1280.webp";
+import conference1920 from "../../../assets/Images/Hero/msme-conference-1920.webp";
+import inauguration1280 from "../../../assets/Images/Hero/msme-inauguration-1280.webp";
+import inauguration1920 from "../../../assets/Images/Hero/msme-inauguration-1920.webp";
+
+const DEFAULT_FOCUS = "center";
 
 const heroPool = [
-  connect,
-  awareness,
-  conclave,
-  hosur,
-  highlight1,
-  highlight2,
-  highlight3,
-  highlight4,
-  ev01,
-  ev02,
-  ev03,
-  ev04,
-  ev05,
-  ev06,
-  ev07,
-  ev08,
-  ev09,
-  ev10,
-  ev11,
-  ev12,
-  ev13,
-  ev14,
-  ev15,
-  ev16,
-  ev17,
-  ev18,
-  ev19,
-  ev20,
-  ev21,
-  ev22,
+  { key: "connect", src: connect, focus: "center" },
+  { key: "awareness", src: awareness, focus: "center" },
+  { key: "hosur-scheme", src: hosur, focus: "center" },
+  { key: "highlight-3", src: highlight3, focus: "center" },
+  { key: "outreach", src: outreach1920, srcSet: `${outreach1280} 1280w, ${outreach1920} 1920w`, focus: "center" },
+  { key: "conference", src: conference1920, srcSet: `${conference1280} 1280w, ${conference1920} 1920w`, focus: "center" },
+  { key: "inauguration", src: inauguration1920, srcSet: `${inauguration1280} 1280w, ${inauguration1920} 1920w`, focus: "center" },
+  { key: "opening-1", src: evOpen1, focus: "center" },
+  { key: "opening-2", src: evOpen2, focus: "center" },
+  { key: "opening-3", src: evOpen3, focus: "center" },
+  { key: "opening-4", src: evOpen4, focus: "center" },
+  { key: "session-1", src: evSession1, focus: "center" },
+  { key: "session-2", src: evSession2, focus: "center" },
+  { key: "session-3", src: evSession3, focus: "center" },
+  { key: "session-4", src: evSession4, focus: "center" },
+  { key: "session-5", src: evSession5, focus: "center" },
+  { key: "wide-1", src: evWide1, focus: "center" },
+  { key: "wide-2", src: evWide2, focus: "50% 15%" },
+  { key: "wide-3", src: evWide3, focus: "50% 15%" },
 ];
 
-// One dedicated photograph per inner page, so no two pages share the same banner.
+const heroByKey = Object.fromEntries(heroPool.map((hero) => [hero.key, hero]));
+
 const heroByTitle = {
-  "About FASII": connect,
-  "FASII Office Bearers": awareness,
-  "Executive Committee": conclave,
-  "Past Presidents": hosur,
-  "History of FASII": highlight1,
-  "Steering Committee": highlight2,
-  Secretariat: highlight3,
-  "Member Associations & Partners": highlight4,
-  Publications: ev01,
-  "Research Reports": ev02,
-  "Policy Documents": ev03,
-  Circulars: ev04,
-  "Annual Reports": ev05,
-  "Core MSME Sector": ev06,
-  "Agriculture & Allied Industries": ev07,
-  "Banking & Finance": ev08,
-  "Education & Skill Development": ev09,
-  "Energy & Renewable Energy": ev10,
-  "Healthcare & Pharmaceuticals": ev11,
-  "Information Technology & Software": ev12,
-  "Infrastructure & Construction": ev13,
-  "Manufacturing Sector": ev14,
-  "Tourism & Hospitality": ev15,
-  "Pradhan Mantri Viksit Bharat Rozgar Yojana": ev16,
-  "Scheme Specifications & Definitions": ev17,
-  "Applicability & Scheme Guidelines": ev18,
-  "Official Policy Document & Provisions": ev19,
-  "News & Events": ev20,
-  "Photo Gallery": ev21,
-  "Video Gallery": ev22,
-  "Press Releases": ev09,
-  "FASII North Zone": ev10,
-  "FASII South Zone": ev11,
-  "FASII East Zone": ev12,
-  "FASII West Zone": ev13,
-  "International Engagement": ev14,
-  "State-wise Presence": ev15,
+  "About FASII": heroByKey.connect,
+  "FASII Office Bearers": heroByKey.awareness,
+  "Executive Committee": heroByKey["hosur-scheme"],
+  "Past Presidents": heroByKey["highlight-3"],
+  "History of FASII": heroByKey.outreach,
+  "Steering Committee": heroByKey.conference,
+  Secretariat: heroByKey.inauguration,
+  "Member Associations & Partners": heroByKey["opening-1"],
+
+  Publications: heroByKey["opening-2"],
+  "Research Reports": heroByKey["opening-3"],
+  "Policy Documents": heroByKey["opening-4"],
+  Circulars: heroByKey["session-1"],
+  "Annual Reports": heroByKey["session-2"],
+
+  "Core MSME Sector": heroByKey["session-3"],
+  "Agriculture & Allied Industries": heroByKey["session-4"],
+  "Banking & Finance": heroByKey["session-5"],
+  "Education & Skill Development": heroByKey["wide-1"],
+  "Energy & Renewable Energy": heroByKey["wide-2"],
+  "Healthcare & Pharmaceuticals": heroByKey["wide-3"],
+  "Information Technology & Software": heroByKey.outreach,
+  "Infrastructure & Construction": heroByKey.conference,
+  "Manufacturing Sector": heroByKey.inauguration,
+  "Tourism & Hospitality": heroByKey.connect,
+
+  "Pradhan Mantri Viksit Bharat Rozgar Yojana": heroByKey.awareness,
+  "Scheme Specifications & Definitions": heroByKey["highlight-3"],
+  "Applicability & Scheme Guidelines": heroByKey["opening-1"],
+  "Official Policy Document & Provisions": heroByKey["opening-2"],
+
+  "News & Events": heroByKey["opening-3"],
+  "Photo Gallery": heroByKey["session-1"],
+  "Video Gallery": heroByKey["session-2"],
+  "Press Releases": heroByKey["wide-1"],
+
+  "FASII North Zone": heroByKey["wide-2"],
+  "FASII South Zone": heroByKey["wide-3"],
+  "FASII East Zone": heroByKey["opening-4"],
+  "FASII West Zone": heroByKey["session-3"],
+
+  "International Engagement": heroByKey["session-4"],
+  "State-wise Presence": heroByKey["session-5"],
 };
 
-// Stable fallback for any future page title that is not mapped above.
-function poolImageFor(title) {
+function heroForTitle(title) {
   let hash = 0;
-
   for (let index = 0; index < title.length; index += 1) {
     hash = (hash * 31 + title.charCodeAt(index)) % 997;
   }
-
   return heroPool[hash % heroPool.length];
 }
 
 export default function PageHero({ title, image }) {
-  const background = image || heroByTitle[title] || poolImageFor(title);
+  const hero =
+    typeof image === "string" ? { src: image } : heroByTitle[title] || heroForTitle(title);
 
   return (
-    <section className="relative flex min-h-110 items-center overflow-hidden bg-slate-900 sm:min-h-150 lg:min-h-180">
+    <section className="relative flex min-h-110 items-center overflow-hidden bg-slate-900 sm:min-h-150 lg:min-h-190">
       <img
-        src={background}
+        src={hero.src}
+        srcSet={hero.srcSet}
+        sizes={hero.srcSet ? "100vw" : undefined}
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+        loading="eager"
+        decoding="async"
+        fetchPriority="high"
+        style={{ objectPosition: hero.focus || DEFAULT_FOCUS }}
+        className="absolute inset-0 z-0 h-full w-full object-cover"
       />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 z-0 bg-linear-to-r from-slate-950/90 via-slate-950/60 to-slate-950/15"
-      />
-
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
-        <div className="max-w-3xl">
-          <div className="mb-4 flex items-center gap-3">
-            <span className="h-1 w-12 bg-orange-600" />
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-400">
-              FASII Official
-            </span>
-          </div>
-          <h1 className="font-serif text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            {title}
-          </h1>
-        </div>
-      </div>
+      {/* 
+        Note: Per user instructions, all text overlays and visual effects 
+        (gradients, filters, etc.) have been removed to display clean, 
+        high-quality images.
+      */}
     </section>
   );
 }

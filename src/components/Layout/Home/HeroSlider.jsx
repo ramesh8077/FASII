@@ -1,47 +1,40 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import banner1 from "../../../assets/Images/FASIIEvents/msme-connect-main.jpeg";
-import banner2 from "../../../assets/Images/FASIIEvents/msme-awareness-main.jpeg";
-import banner3 from "../../../assets/Images/FASIIEvents/sidbi-conclave-main.jpeg";
-import banner4 from "../../../assets/Images/FASIIEvents/hosur-schemes-main.jpeg";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+/*
+ * Optimized Hero Slider.
+ * 
+ * All text overlays, buttons, and visual effects (filters/gradients) 
+ * have been removed as per expert image optimization requirements.
+ * Images are served in high-quality WebP format with enhanced sharpness.
+ */
+import banner1 from "../../../assets/Images/Hero/msme-connect-main.webp";
+import banner2 from "../../../assets/Images/Hero/msme-awareness-main.webp";
+import banner4 from "../../../assets/Images/Hero/hosur-schemes-main.webp";
+import banner3Small from "../../../assets/Images/Hero/msme-inauguration-1280.webp";
+import banner3 from "../../../assets/Images/Hero/msme-inauguration-1920.webp";
 
 const slides = [
   {
     id: "about",
-    label: "About FASII",
-    title: "A national federation for small industries",
-    description: "Connecting industry associations and supporting small industries through programmes, awareness and vendor development.",
-    button: "About FASII",
-    path: "/about",
     image: banner1,
+    focus: "center",
   },
   {
     id: "leadership",
-    label: "Office Bearers",
-    title: "Member associations from across India",
-    description: "Meet FASII's national office bearers and regional chairmen representing industry associations across the country.",
-    button: "Meet the Office Bearers",
-    path: "/about/office-bearers",
     image: banner2,
+    focus: "center",
   },
   {
     id: "events",
-    label: "Events & Programmes",
-    title: "MSME programmes and industry engagement",
-    description: "Explore FASII's recent vendor development, awareness, exhibition and industry engagement programmes.",
-    button: "Latest FASII Updates",
-    path: "/media/news",
     image: banner3,
+    srcSet: `${banner3Small} 1280w, ${banner3} 1920w`,
+    focus: "center",
   },
   {
     id: "schemes",
-    label: "Schemes & Services",
-    title: "Government schemes made accessible",
-    description: "Scheme awareness, applications, grievance support and downloads for small enterprises.",
-    button: "View Services",
-    path: "/services/YojanaIntro",
     image: banner4,
+    focus: "center",
   },
 ];
 
@@ -50,8 +43,6 @@ export default function HeroSlider() {
   const [playing, setPlaying] = useState(true);
   const [focused, setFocused] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
-
-  const currentSlide = slides[activeSlide];
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -86,49 +77,29 @@ export default function HeroSlider() {
       }}
       className="relative isolate overflow-hidden border-b-4 border-amber-500 bg-orange-950 text-white"
     >
-      <div className="relative h-110 sm:h-150 lg:h-180">
+      <div className="relative h-110 sm:h-150 lg:h-190">
         {slides.map((slide, index) => (
           <img
             key={slide.id}
             src={slide.image}
+            srcSet={slide.srcSet}
+            sizes={slide.srcSet ? "100vw" : undefined}
             alt=""
             aria-hidden="true"
             fetchPriority={index === 0 ? "high" : "auto"}
             loading={index === 0 ? "eager" : "lazy"}
-            className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-700 motion-reduce:transition-none ${
+            decoding="async"
+            style={{ objectPosition: slide.focus }}
+            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 motion-reduce:transition-none ${
               index === activeSlide ? "opacity-100" : "opacity-0"
             }`}
           />
         ))}
 
-        {/* light overlay so the photo stays visible */}
-        <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-orange-950/90 via-orange-950/20 to-transparent" />
-
-        {/* caption band */}
-        <div className="absolute inset-x-0 bottom-0">
-          <div
-            role="group"
-            aria-roledescription="slide"
-            aria-label={`${activeSlide + 1} of ${slides.length}`}
-            aria-live={playing ? "off" : "polite"}
-            className="mx-auto max-w-7xl px-5 pb-6 sm:px-8 lg:px-12 lg:pb-8"
-          >
-            <p className="inline-block bg-amber-400 px-3 py-1 text-xs font-bold uppercase tracking-[.18em] text-orange-950">
-              {currentSlide.label}
-            </p>
-            <h1 className="mt-3 max-w-3xl text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-              {currentSlide.title}
-            </h1>
-            <p className="mt-3 max-w-2xl text-sm leading-6 text-orange-50 sm:text-base">{currentSlide.description}</p>
-            <Link
-              to={currentSlide.path}
-              className="group mt-5 inline-flex items-center gap-2 bg-orange-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-orange-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-            >
-              {currentSlide.button}
-              <ArrowRight size={17} aria-hidden="true" className="transition-transform group-hover:translate-x-1 motion-reduce:transform-none" />
-            </Link>
-          </div>
-        </div>
+        {/* 
+          Note: Per user instructions, all text overlays, buttons, and 
+          visual effects (gradients, filters, etc.) have been removed.
+        */}
 
         {/* arrows */}
         <button
@@ -158,7 +129,7 @@ export default function HeroSlider() {
                 key={slide.id}
                 type="button"
                 onClick={() => changeSlide(index)}
-                aria-label={`Show slide ${index + 1}: ${slide.label}`}
+                aria-label={`Show slide ${index + 1}`}
                 aria-current={index === activeSlide ? "true" : undefined}
                 className="flex h-11 items-center px-2 focus-visible:outline-2 focus-visible:outline-amber-300"
               >
