@@ -57,6 +57,37 @@ const heroPool = [
   { key: "wide-1", src: evWide1, focus: "center" },
   { key: "wide-2", src: evWide2, focus: "50% 15%" },
   { key: "wide-3", src: evWide3, focus: "50% 15%" },
+  // New images from public/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/
+  { key: "new-agriculture", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/Agricultar.jpg", focus: "center" },
+  { key: "new-annual-report", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/Annual-Report.jpg", focus: "center" },
+  { key: "new-banking", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/Banking-Fiance.jpg", focus: "center" },
+  { key: "new-circular", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/Circular-Knowldge.jpg", focus: "center" },
+  { key: "new-download", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/Download.jpg", focus: "center" },
+  { key: "new-east-zone", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/East Zone_ Heritage, Hills and Harmony.png", focus: "center" },
+  { key: "new-education", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/Education.jpg", focus: "center" },
+  { key: "new-healthcare", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/HealthCare.jpg", focus: "center" },
+  { key: "new-it", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/Information Technoglgy.jpg", focus: "center" },
+  { key: "new-infrastructure", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/Infrasturtucre.jpg", focus: "center" },
+  { key: "new-international", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/International.jpg", focus: "center" },
+  { key: "new-publication", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/Knowdlge-Publication.jpg", focus: "center" },
+  { key: "new-news", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/Lates News.jpg", focus: "center" },
+  { key: "new-msme", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/MSME.jpg", focus: "center" },
+  { key: "new-north-zone", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/North Zone_ India’s Vibrant Mosaic.png", focus: "center" },
+  { key: "new-online-app", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/Online-Application.jpg", focus: "center" },
+  // Anchored to the top so the face is never cropped; the crop happens from the bottom (below the waist)
+  { key: "new-pm-yojana", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/PM Viksit Bharat Rozgar Yojana Poster.png", focus: "50% 0%" },
+  { key: "new-photo-gallery", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/Photo Gallery.jpg", focus: "center" },
+  { key: "new-policy", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/Policy-documents.jpg", focus: "center" },
+  { key: "new-press", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/Press-Realsese.jpg", focus: "center" },
+  { key: "new-grievance", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/Public- Grienvence.jpg", focus: "center" },
+  { key: "new-research", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/Research Report.jpg", focus: "center" },
+  { key: "new-south-zone", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/South Zone Scenic India Infographic.png", focus: "center" },
+  { key: "new-states", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/States.jpg", focus: "center" },
+  { key: "new-tourism", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/Toursium.jpg", focus: "center" },
+  { key: "new-video-gallery", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/Video-Gallery.jpg", focus: "center" },
+  { key: "new-west-zone", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/West India Heritage and Horizons.png", focus: "center" },
+  { key: "new-manufacturing", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/manifacturing.jpg", focus: "center" },
+  { key: "new-energy", src: "/All Hero Section Images/North Zone_ India’s Vibrant Mosaic/solar-panel-cell-dramatic-sunset-sky-clean-alternative-power-energy-concept.jpg", focus: "center" },
 ];
 
 const heroByKey = Object.fromEntries(heroPool.map((hero) => [hero.key, hero]));
@@ -71,40 +102,40 @@ const heroByTitle = {
   Secretariat: heroByKey.inauguration,
   "Member Associations & Partners": heroByKey["opening-1"],
 
-  Publications: heroByKey["opening-2"],
-  "Research Reports": heroByKey["opening-3"],
-  "Policy Documents": heroByKey["opening-4"],
-  Circulars: heroByKey["session-1"],
-  "Annual Reports": heroByKey["session-2"],
+  Publications: heroByKey["new-publication"],
+  "Research Reports": heroByKey["new-research"],
+  "Policy Documents": heroByKey["new-policy"],
+  Circulars: heroByKey["new-circular"],
+  "Annual Reports": heroByKey["new-annual-report"],
 
-  "Core MSME Sector": heroByKey["session-3"],
-  "Agriculture & Allied Industries": heroByKey["session-4"],
-  "Banking & Finance": heroByKey["session-5"],
-  "Education & Skill Development": heroByKey["wide-1"],
-  "Energy & Renewable Energy": heroByKey["wide-2"],
-  "Healthcare & Pharmaceuticals": heroByKey["wide-3"],
-  "Information Technology & Software": heroByKey.outreach,
-  "Infrastructure & Construction": heroByKey.conference,
-  "Manufacturing Sector": heroByKey.inauguration,
-  "Tourism & Hospitality": heroByKey.connect,
+  "Core MSME Sector": heroByKey["new-msme"],
+  "Agriculture & Allied Industries": heroByKey["new-agriculture"],
+  "Banking & Finance": heroByKey["new-banking"],
+  "Education & Skill Development": heroByKey["new-education"],
+  "Energy & Renewable Energy": heroByKey["new-energy"],
+  "Healthcare & Pharmaceuticals": heroByKey["new-healthcare"],
+  "Information Technology & Software": heroByKey["new-it"],
+  "Infrastructure & Construction": heroByKey["new-infrastructure"],
+  "Manufacturing Sector": heroByKey["new-manufacturing"],
+  "Tourism & Hospitality": heroByKey["new-tourism"],
 
-  "Pradhan Mantri Viksit Bharat Rozgar Yojana": heroByKey.awareness,
-  "Scheme Specifications & Definitions": heroByKey["highlight-3"],
-  "Applicability & Scheme Guidelines": heroByKey["opening-1"],
-  "Official Policy Document & Provisions": heroByKey["opening-2"],
+  "Pradhan Mantri Viksit Bharat Rozgar Yojana": heroByKey["new-pm-yojana"],
+  "Scheme Specifications & Definitions": heroByKey["new-online-app"],
+  "Applicability & Scheme Guidelines": heroByKey["new-grievance"],
+  "Official Policy Document & Provisions": heroByKey["new-download"],
 
-  "News & Events": heroByKey["opening-3"],
-  "Photo Gallery": heroByKey["session-1"],
-  "Video Gallery": heroByKey["session-2"],
-  "Press Releases": heroByKey["wide-1"],
+  "News & Events": heroByKey["new-news"],
+  "Photo Gallery": heroByKey["new-photo-gallery"],
+  "Video Gallery": heroByKey["new-video-gallery"],
+  "Press Releases": heroByKey["new-press"],
 
-  "FASII North Zone": heroByKey["wide-2"],
-  "FASII South Zone": heroByKey["wide-3"],
-  "FASII East Zone": heroByKey["opening-4"],
-  "FASII West Zone": heroByKey["session-3"],
+  "FASII North Zone": heroByKey["new-north-zone"],
+  "FASII South Zone": heroByKey["new-south-zone"],
+  "FASII East Zone": heroByKey["new-east-zone"],
+  "FASII West Zone": heroByKey["new-west-zone"],
 
-  "International Engagement": heroByKey["session-4"],
-  "State-wise Presence": heroByKey["session-5"],
+  "International Engagement": heroByKey["new-international"],
+  "State-wise Presence": heroByKey["new-states"],
 };
 
 function heroForTitle(title) {
@@ -120,7 +151,7 @@ export default function PageHero({ title, image }) {
     typeof image === "string" ? { src: image } : heroByTitle[title] || heroForTitle(title);
 
   return (
-    <section className="relative flex min-h-110 items-center overflow-hidden bg-slate-900 sm:min-h-150 lg:min-h-190">
+    <section className="page-hero relative flex min-h-110 items-center overflow-hidden bg-slate-900 sm:min-h-150 lg:min-h-190">
       <img
         src={hero.src}
         srcSet={hero.srcSet}

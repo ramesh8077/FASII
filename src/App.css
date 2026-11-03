@@ -17,6 +17,12 @@
   }
 }
 
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .page-hero {
+    min-height: 27rem;
+  }
+}
+
 .hero {
   position: relative;
 

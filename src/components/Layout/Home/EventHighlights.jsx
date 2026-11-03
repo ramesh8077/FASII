@@ -24,37 +24,39 @@ export default function EventHighlights() {
           </Link>
         </div>
 
-        {/* Photo mosaic: first event is featured */}
-        <div className="grid gap-3 sm:grid-cols-2 lg:auto-rows-[230px] lg:grid-cols-4">
+        {/* Event grid: mosaic layout with text below images */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {fasiiEvents.map((event, index) => {
             const featured = index === 0;
             const wide = index === 3;
             return (
               <article
                 key={event.id}
-                className={`group relative isolate overflow-hidden bg-orange-950 ${
+                className={`group flex flex-col border border-orange-900 bg-orange-950 shadow-sm transition-transform hover:-translate-y-1 ${
                   featured ? "sm:col-span-2 lg:row-span-2" : ""
                 } ${wide ? "sm:col-span-2" : ""}`}
               >
-                <img
-                  src={photos[index]}
-                  alt={`${event.title} event`}
-                  loading="lazy"
-                  className="aspect-[4/3] h-full w-full object-cover transition duration-500 group-hover:scale-105 motion-reduce:transition-none lg:aspect-auto"
-                />
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 bg-linear-to-t from-orange-950 via-orange-950/85 via-55% to-orange-950/20"
-                />
-                <div className="absolute inset-x-0 bottom-0 border-b-4 border-amber-400 p-4 text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] sm:p-5">
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-amber-200">{event.category}</p>
-                  <h3 className={`mt-1 font-bold leading-snug text-white ${featured ? "text-xl sm:text-2xl" : "text-base"}`}>
-                    {event.title}
-                  </h3>
-                  <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-white">
-                    <span className="inline-flex items-center gap-1.5"><CalendarDays size={14} aria-hidden="true" />{event.date}</span>
-                    <span className="inline-flex items-center gap-1.5"><MapPin size={14} aria-hidden="true" />{event.location}</span>
-                  </p>
+                <div className="flex flex-grow flex-col">
+                  <img
+                    src={photos[index]}
+                    alt={`${event.title} event`}
+                    loading="lazy"
+                    className={`w-full border-b-8 border-amber-500 object-cover ${
+                      featured ? "lg:h-full" : wide ? "aspect-[16/9]" : "aspect-[4/3]"
+                    }`}
+                  />
+                  <div className="flex flex-grow flex-col p-4 sm:p-5">
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-amber-400">{event.category}</p>
+                    <h3 className={`mt-1 font-bold leading-snug text-white ${featured ? "text-lg sm:text-xl" : "text-sm"}`}>
+                      {event.title}
+                    </h3>
+                    <div className="mt-auto pt-3 border-t border-orange-900/50">
+                      <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] font-medium text-orange-100/80">
+                        <span className="inline-flex items-center gap-1.5"><CalendarDays size={13} aria-hidden="true" />{event.date}</span>
+                        <span className="inline-flex items-center gap-1.5"><MapPin size={13} aria-hidden="true" />{event.location}</span>
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </article>
             );
