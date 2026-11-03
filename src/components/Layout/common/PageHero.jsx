@@ -93,14 +93,14 @@ const heroPool = [
 const heroByKey = Object.fromEntries(heroPool.map((hero) => [hero.key, hero]));
 
 const heroByTitle = {
-  "About FASII": heroByKey.connect,
+  "About FASII": { src: "/All Hero Section Images/secretariat/Govement-Organisation.jpg", focus: "center" },
   "FASII Office Bearers": heroByKey.awareness,
   "Executive Committee": heroByKey["hosur-scheme"],
   "Past Presidents": heroByKey["highlight-3"],
-  "History of FASII": heroByKey.outreach,
+  "History of FASII": { src: "/All Hero Section Images/secretariat/History.jpg", focus: "center" },
   "Steering Committee": heroByKey.conference,
-  Secretariat: heroByKey.inauguration,
-  "Member Associations & Partners": heroByKey["opening-1"],
+  Secretariat: { src: "/All Hero Section Images/secretariat/secretariat.jpg", focus: "center" },
+  "Member Associations & Partners": { src: "/All Hero Section Images/secretariat/allied-organisations.jpg", focus: "center" },
 
   Publications: heroByKey["new-publication"],
   "Research Reports": heroByKey["new-research"],

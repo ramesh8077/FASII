@@ -1,4 +1,3 @@
-import BannerImage from "../../../assets/Images/FASIIEvents/msme-connect-main.jpeg";
 import conclave from "../../../assets/Images/FASIIEvents/sidbi-conclave-main.jpeg";
 import connect from "../../../assets/Images/FASIIEvents/msme-connect-main.jpeg";
 import awareness from "../../../assets/Images/FASIIEvents/msme-awareness-main.jpeg";
@@ -24,12 +23,12 @@ const recentActivities = [
   { title: "MSME awareness programmes", place: "Chennai", image: awareness },
 ];
 
-export default function About_Orgniz({ bannerImage = BannerImage }) {
+export default function About_Orgniz() {
   const [intro, role, focus] = paragraphs;
 
   return (
     <main className="bg-white text-slate-900">
-      <PageHero title="About FASII" image={bannerImage} />
+      <PageHero title="About FASII" />
 
       <section aria-labelledby="about-content-title" className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
         <div className="grid gap-10 lg:grid-cols-[1.15fr_.85fr] lg:gap-14">
