@@ -16,7 +16,7 @@ export default function EventHighlights() {
           <div>
             <p className="text-xs font-bold uppercase tracking-[.2em] text-orange-700">FASII in action</p>
             <h2 id="fasii-events-title" className="mt-2 border-l-4 border-amber-500 pl-4 text-3xl font-bold text-orange-950 sm:text-4xl">
-              Recent programmes &amp; events
+              Recent Programmes &amp; Events
             </h2>
           </div>
           <Link to="/media/news" className="inline-flex items-center gap-2 text-sm font-bold text-orange-700 hover:text-orange-900">
@@ -44,8 +44,8 @@ export default function EventHighlights() {
                 />
                 <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-orange-950/95 via-orange-950/30 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 border-b-4 border-amber-400 p-4 sm:p-5">
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-amber-300">{event.category}</p>
-                  <h3 className={`mt-1 font-bold leading-snug text-white ${featured ? "text-xl sm:text-2xl" : "text-base"}`}>
+                <p className="text-[11px] font-bold uppercase tracking-wider text-white">{event.category}</p>                  
+                <h3 className={`mt-1 font-bold leading-snug text-white ${featured ? "text-xl sm:text-2xl" : "text-base"}`}>
                     {event.title}
                   </h3>
                   <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-orange-100">

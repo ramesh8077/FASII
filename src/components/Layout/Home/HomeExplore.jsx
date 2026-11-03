@@ -22,7 +22,7 @@ export default function HomeExplore() {
             <p className="text-xs font-bold uppercase tracking-[.2em] text-orange-700">Industry landscape</p>
             <div className="mt-2 flex flex-wrap items-end justify-between gap-4">
               <h2 id="home-explore-heading" className="border-l-4 border-amber-500 pl-4 text-3xl font-bold text-orange-950 sm:text-4xl">
-                Explore sectors
+                Explore Sectors
               </h2>
               <Link to="/sectors/msme" className="inline-flex items-center gap-2 text-sm font-bold text-orange-700 hover:text-orange-900">
                 All sectors <ArrowRight size={17} aria-hidden="true" />
@@ -64,7 +64,7 @@ export default function HomeExplore() {
           <aside aria-labelledby="home-documents-heading" className="self-start border-t-4 border-orange-600 bg-white">
             <div className="bg-orange-900 px-5 py-5 text-white">
               <p className="text-xs font-bold uppercase tracking-[.2em] text-amber-300">Useful resources</p>
-              <h2 id="home-documents-heading" className="mt-1 text-2xl font-bold">Documents &amp; downloads</h2>
+              <h2 id="home-documents-heading" className="mt-1 text-2xl font-bold">Documents &amp; Downloads</h2>
               <p className="mt-2 text-sm leading-6 text-orange-100">
                 Policy, scheme and standards documents from the FASII resource library.
               </p>

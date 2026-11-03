@@ -5,30 +5,30 @@ import conclave from "../../../assets/Images/FASIIEvents/sidbi-conclave-main.jpe
 
 const pathways = [
   {
-    title: "For industry associations",
+    title: "For Industry Associations",
     description: "Connect with FASII's national network and learn about its leadership and work.",
     link: "Explore FASII",
     path: "/about",
     icon: UsersRound,
   },
   {
-    title: "For small industries",
+    title: "For Small Industries",
     description: "Find sector information, support programmes and opportunities for MSMEs.",
-    link: "Explore sectors",
+    link: "Explore Sectors",
     path: "/sectors/msme",
     icon: Factory,
   },
   {
-    title: "Schemes & services",
+    title: "Schemes & Services",
     description: "Browse citizen services, applications, grievance support and downloads.",
-    link: "View services",
+    link: "View Services",
     path: "/services/YojanaIntro",
     icon: Landmark,
   },
   {
-    title: "Knowledge & policy",
+    title: "Knowledge & Policy",
     description: "Access publications, research reports, policy documents and circulars.",
-    link: "Visit knowledge hub",
+    link: "Visit Knowledge Hub",
     path: "/knowledge/publications",
     icon: FileText,
   },
@@ -55,7 +55,7 @@ export default function HomeOverview() {
           <div>
             <p className="text-xs font-bold uppercase tracking-[.2em] text-orange-700">Welcome to FASII</p>
             <h2 id="home-overview-title" className="mt-2 border-l-4 border-amber-500 pl-4 text-3xl font-bold leading-tight text-orange-950 sm:text-4xl">
-              A stronger voice for small industry
+              A Stronger Voice For Small Industry
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-700">{organization.about}</p>
             <p className="mt-3 text-base leading-8 text-slate-700">{organization.description}</p>
@@ -75,7 +75,7 @@ export default function HomeOverview() {
           <div className="flex flex-wrap items-end justify-between gap-3">
             <div>
               <p className="text-xs font-bold uppercase tracking-[.2em] text-amber-300">What we do</p>
-              <h3 className="mt-2 text-2xl font-bold sm:text-3xl">Bringing associations, industry and institutions together</h3>
+              <h3 className="mt-2 text-2xl font-bold sm:text-3xl">Bringing Associations, Industry and Institutions Together</h3>
             </div>
           </div>
           <ol className="mt-7 grid gap-x-10 sm:grid-cols-2">
@@ -94,9 +94,9 @@ export default function HomeOverview() {
         <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
           <div>
             <p className="text-xs font-bold uppercase tracking-[.2em] text-orange-700">Start here</p>
-            <h3 className="mt-2 border-l-4 border-amber-500 pl-4 text-2xl font-bold text-orange-950 sm:text-3xl">Find what you need</h3>
+            <h3 className="mt-2 border-l-4 border-amber-500 pl-4 text-2xl font-bold text-orange-950 sm:text-3xl">Find What You Need</h3>
           </div>
-          <p className="max-w-md text-sm leading-6 text-slate-600">Explore the federation, practical support and resources for India's small industries.</p>
+          <p className="max-w-md text-sm leading-6 text-slate-600">Explore the federation, practical support and resources for India's small Industries.</p>
         </div>
 
         <div className="grid divide-y divide-orange-200 border-y-2 border-orange-600 bg-white sm:grid-cols-2 sm:divide-y-0 xl:grid-cols-4 xl:divide-x">

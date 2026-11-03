@@ -16,7 +16,7 @@ export default function PressRelease() {
           <div>
             <p className="text-xs font-bold uppercase tracking-[.2em] text-orange-700">News &amp; activities</p>
             <h2 id="fasii-updates-heading" className="mt-2 border-l-4 border-amber-500 pl-4 text-3xl font-bold text-orange-950 sm:text-4xl">
-              Latest from FASII
+              Latest News from FASII
             </h2>
             <p className="mt-3 max-w-2xl leading-7 text-slate-700">
               Updates from FASII programmes, industry engagements and member association events.

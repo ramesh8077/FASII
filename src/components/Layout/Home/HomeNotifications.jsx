@@ -49,7 +49,7 @@ export default function HomeNotifications() {
                   <BellRing size={15} aria-hidden="true" /> Notifications
                 </p>
                 <h2 id="home-notifications-heading" className="mt-2 border-l-4 border-amber-500 pl-4 text-3xl font-bold text-orange-950 sm:text-4xl">
-                  Notifications &amp; circulars
+                  Notifications &amp; Circulars
                 </h2>
               </div>
               <Link to="/knowledge/circulars" className="inline-flex items-center gap-2 text-sm font-bold text-orange-700 hover:text-orange-900">

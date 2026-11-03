@@ -46,7 +46,7 @@ export default function HomeKnowledge() {
           <div className="grid gap-8 lg:grid-cols-[.7fr_1.3fr] lg:items-center">
             <div>
               <p className="text-xs font-bold uppercase tracking-[.2em] text-amber-100">FASII at a glance</p>
-              <h2 className="mt-2 text-2xl font-bold sm:text-3xl">The federation by numbers</h2>
+              <h2 className="mt-2 text-2xl font-bold sm:text-3xl">The Federation By Numbers</h2>
               <p className="mt-3 max-w-md text-sm leading-7 text-orange-50">
                 A national federation built on member associations, regional leadership and practical
                 engagement with small industries.
@@ -74,7 +74,7 @@ export default function HomeKnowledge() {
             <div>
               <p className="text-xs font-bold uppercase tracking-[.2em] text-orange-700">Knowledge hub</p>
               <h2 id="home-knowledge-heading" className="mt-2 border-l-4 border-amber-500 pl-4 text-3xl font-bold text-orange-950 sm:text-4xl">
-                Publications, reports and policy
+                Publications, Reports and Policy
               </h2>
             </div>
             <Link to="/knowledge/publications" className="inline-flex items-center gap-2 text-sm font-bold text-orange-700 hover:text-orange-900">

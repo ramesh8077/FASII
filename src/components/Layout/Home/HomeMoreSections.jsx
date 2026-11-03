@@ -43,7 +43,7 @@ export default function HomeMoreSections() {
             <div>
               <p className="text-xs font-bold uppercase tracking-[.2em] text-orange-700">A national network</p>
               <h2 id="home-regions-heading" className="mt-2 border-l-4 border-amber-500 pl-4 text-3xl font-bold text-orange-950 sm:text-4xl">
-                Regional leadership
+                Regional Leadership
               </h2>
               <p className="mt-3 leading-7 text-slate-700">
                 Meet the regional chairmen representing FASII across India and explore the regional pages.
@@ -87,7 +87,7 @@ export default function HomeMoreSections() {
             <div>
               <p className="text-xs font-bold uppercase tracking-[.2em] text-orange-700">People behind the federation</p>
               <h2 id="home-leadership-heading" className="mt-2 border-l-4 border-amber-500 pl-4 text-3xl font-bold text-orange-950 sm:text-4xl">
-                National office bearers
+                National Office Bearers
               </h2>
               <p className="mt-3 max-w-2xl leading-7 text-slate-700">
                 FASII's leadership comes from member associations and industry communities around the country.
@@ -130,7 +130,7 @@ export default function HomeMoreSections() {
           <div>
             <p className="text-xs font-bold uppercase tracking-[.2em] text-amber-300">Industry engagement</p>
             <h2 id="home-engagement-heading" className="mt-3 border-l-4 border-amber-400 pl-4 text-3xl font-bold sm:text-4xl">
-              Turning connection into opportunity
+              Turning Connection into Opportunity
             </h2>
             <p className="mt-4 leading-7 text-orange-100">
               FASII works with associations, government departments and other stakeholders through
@@ -156,7 +156,7 @@ export default function HomeMoreSections() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
           <p className="text-xs font-bold uppercase tracking-[.2em] text-orange-700">Public services</p>
           <h2 id="home-services-heading" className="mt-2 border-l-4 border-amber-500 pl-4 text-3xl font-bold text-orange-950 sm:text-4xl">
-            Services and useful links
+            Services and Useful Links
           </h2>
           <p className="mt-3 max-w-2xl leading-7 text-slate-700">
             Go directly to scheme information, online services, grievance support and downloads.
@@ -187,7 +187,7 @@ export default function HomeMoreSections() {
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <p className="text-xs font-bold uppercase tracking-[.2em] text-amber-200">Let's connect</p>
-              <h2 id="home-contact-heading" className="mt-2 text-3xl font-bold sm:text-4xl">Working with industry associations?</h2>
+              <h2 id="home-contact-heading" className="mt-2 text-3xl font-bold sm:text-4xl">Working with Industry Associations?</h2>
               <p className="mt-3 max-w-2xl leading-7 text-orange-50">
                 Get in touch with FASII to learn more about its work with small industries and member associations.
               </p>
