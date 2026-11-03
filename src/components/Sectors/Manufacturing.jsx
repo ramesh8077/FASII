@@ -36,7 +36,7 @@ export default function Manufacturing() {
         </div>
 
         <div className="grid gap-8 lg:grid-cols-[1fr_320px]">
-          <div className="space-y-8">
+          <div className="min-w-0 space-y-8">
             
             {/* Image 1: Main Sector Banner */}
             <div className="border border-slate-300 bg-slate-50 p-2">

@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import { MapPin, Users, Building2, Mail, ExternalLink, ChevronRight } from "lucide-react";
 import PageHero from "../Layout/common/PageHero";
+import northMap from "../../assets/Images/Maps/north.jpg";
+import southMap from "../../assets/Images/Maps/south.jpg";
+import eastMap from "../../assets/Images/Maps/east.jpg";
+import westMap from "../../assets/Images/Maps/west.jpg";
 
 const statePresence = [
   {
@@ -8,7 +12,7 @@ const statePresence = [
     states: ["Uttar Pradesh", "Delhi NCR", "Punjab", "Haryana", "Rajasthan", "Himachal Pradesh", "Uttarakhand"],
     chairman: "Shri Himanshu Tyagi",
     contact: "Organicbasket09@gmail.com",
-    mapImage: "src/assets/Images/Maps/north.jpg", 
+    mapImage: northMap, 
     associations: [
       "Association for Helping Hand, Ghaziabad",
       "Udyog Vyapar Mandal, Ghaziabad",
@@ -20,7 +24,7 @@ const statePresence = [
     states: ["Tamil Nadu", "Karnataka", "Kerala", "Andhra Pradesh", "Telangana", "Puducherry"],
     chairman: "Shri B. Karthikeyan",
     contact: "fasiichairman@gmail.com",
-    mapImage: "src/assets/Images/Maps/south.jpg",
+    mapImage: southMap,
     associations: [
       "Indian Industries and Rural Development Foundation, Chennai",
       "Sourashtra Chamber of Commerce, Madurai",
@@ -32,7 +36,7 @@ const statePresence = [
     states: ["West Bengal", "Odisha", "Bihar", "Jharkhand", "Northeast States", "Andaman & Nicobar"],
     chairman: "Shri Chiranjib Ghosh",
     contact: "chiranjib36@gmail.com",
-    mapImage: "src/assets/Images/Maps/east.jpg",
+    mapImage: eastMap,
     associations: [
       "Khasmohal Balichak Polley Unnayan Samity, Howrah",
       "Tiny Enterprises' Association, Kolkata",
@@ -45,7 +49,7 @@ const statePresence = [
     states: ["Maharashtra", "Gujarat", "Goa", "Madhya Pradesh", "Chhattisgarh", "Dadra & Nagar Haveli"],
     chairman: "Shri Devendra Wasundeorao Sherekar",
     contact: "devenwarud@rediffmail.com",
-    mapImage: "src/assets/Images/Maps/west.jpg",
+    mapImage: westMap,
     associations: [
       "Soni Information & Education Society, Amravati"
     ]

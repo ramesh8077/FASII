@@ -42,13 +42,16 @@ export default function EventHighlights() {
                   loading="lazy"
                   className="aspect-[4/3] h-full w-full object-cover transition duration-500 group-hover:scale-105 motion-reduce:transition-none lg:aspect-auto"
                 />
-                <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-orange-950/95 via-orange-950/30 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 border-b-4 border-amber-400 p-4 sm:p-5">
-                <p className="text-[11px] font-bold uppercase tracking-wider text-white">{event.category}</p>                  
-                <h3 className={`mt-1 font-bold leading-snug text-white ${featured ? "text-xl sm:text-2xl" : "text-base"}`}>
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 bg-linear-to-t from-orange-950 via-orange-950/85 via-55% to-orange-950/20"
+                />
+                <div className="absolute inset-x-0 bottom-0 border-b-4 border-amber-400 p-4 text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] sm:p-5">
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-amber-200">{event.category}</p>
+                  <h3 className={`mt-1 font-bold leading-snug text-white ${featured ? "text-xl sm:text-2xl" : "text-base"}`}>
                     {event.title}
                   </h3>
-                  <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-orange-100">
+                  <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-white">
                     <span className="inline-flex items-center gap-1.5"><CalendarDays size={14} aria-hidden="true" />{event.date}</span>
                     <span className="inline-flex items-center gap-1.5"><MapPin size={14} aria-hidden="true" />{event.location}</span>
                   </p>

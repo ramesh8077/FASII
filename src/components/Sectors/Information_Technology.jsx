@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Code, Globe, Smartphone, Database, Cloud } from "lucide-react";
 import PageHero from "../Layout/common/PageHero";
+import itBanner from "../../assets/Images/EventHighlights/highlight-1.jpg";
 
 const initiatives = [
   { icon: Code, title: "Software Development", description: "Supporting custom application developers, and software startups." },
@@ -23,7 +24,7 @@ export default function Information_Technology() {
         
         {/* Generated Image Integration */}
         <div className="mb-6 border-4 border-slate-200">
-          <img src="/assets/it-sector-banner.jpg" alt="Information Technology" className="w-full h-64 object-cover" />
+          <img src={itBanner} alt="Information Technology" className="h-48 w-full object-cover sm:h-64 lg:h-80" loading="lazy" decoding="async" />
         </div>
 
         <p className="text-sm leading-6 text-slate-700 text-justify columns-1 md:columns-2 gap-8">

@@ -140,7 +140,7 @@ const Header = () => {
 
       {/* Branding row: logo + title on the left, utility links + search on the right */}
       <div className="relative bg-white">
-        <div className={`${CONTAINER} flex items-center gap-4 py-4 lg:py-5`}>
+        <div className={`${CONTAINER} flex flex-wrap items-center gap-4 gap-y-3 py-4 sm:flex-nowrap lg:py-5`}>
           <a href="/" className="flex min-w-0 items-center gap-4">
             <img
               src="/site-logo-final.png"
@@ -159,7 +159,7 @@ const Header = () => {
             </div>
           </a>
 
-          <div className="ml-auto flex shrink-0 flex-col items-end gap-2">
+          <div className="ml-auto flex w-full shrink-0 flex-col items-end gap-2 sm:w-auto">
             {/* Utility links */}
             <div className="flex items-center divide-x divide-orange-200 text-xs text-slate-700">
               <a href="mailto:fasiichairman@gmail.com" className="hidden items-center gap-2 px-3 py-1 transition hover:text-orange-700 lg:flex">

@@ -23,14 +23,15 @@ export default function MSME() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           
           {/* Classification Table (Strict) */}
-          <div className="border border-slate-300 bg-white">
+          <div className="min-w-0 border border-slate-300 bg-white">
             <div className="bg-slate-800 px-4 py-3">
               <h2 className="text-sm font-bold uppercase text-white">Official MSME Classification</h2>
             </div>
-            <table className="w-full text-left text-sm border-collapse">
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[20rem] border-collapse text-left text-sm">
               <thead className="bg-slate-100 border-b-2 border-slate-300">
                 <tr>
                   <th className="px-4 py-3 font-bold text-slate-800 border-r border-slate-300">Category</th>
@@ -55,7 +56,8 @@ export default function MSME() {
                   <td className="px-4 py-3 text-slate-700">Up to ₹250 Cr</td>
                 </tr>
               </tbody>
-            </table>
+              </table>
+            </div>
             <div className="bg-orange-50 px-4 py-2 border-t border-slate-300 text-xs font-semibold text-orange-800">
               Reference: Gazette of India, Notification defining MSMEs
             </div>

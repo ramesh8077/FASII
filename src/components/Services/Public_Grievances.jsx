@@ -51,8 +51,9 @@ export default function Public_Grievances() {
               </div>
 
               {/* Registration Dates Table */}
-              <div className="border border-slate-300 mt-4">
-                <table className="w-full text-left text-sm border-collapse">
+              <div className="mt-4 border border-slate-300">
+                <div className="overflow-x-auto">
+                  <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
                   <thead className="bg-slate-800 text-white">
                     <tr>
                       <th className="px-5 py-3 font-bold border-r border-slate-600">Scheme Segment</th>
@@ -67,7 +68,8 @@ export default function Public_Grievances() {
                       <td className="px-5 py-4 text-slate-700 font-semibold">31.07.2027</td>
                     </tr>
                   </tbody>
-                </table>
+                  </table>
+                </div>
                 <div className="bg-amber-50 p-4 border-t border-slate-300 text-sm text-slate-800">
                   <strong className="text-orange-900">Note:</strong> All the existing establishments which are registered with EPFO and having a unique Employer’s code, would be considered deemed registered under the scheme w.e.f. 01.08.2025. However, such establishments would require to provide details of PAN, GSTN and PAN linked Bank Account Number of the employer.
                 </div>
@@ -111,8 +113,9 @@ export default function Public_Grievances() {
                 </div>
 
                 {/* EPF Wage Slabs Table */}
-                <div className="border border-amber-300 bg-white shadow-sm mb-6">
-                  <table className="w-full text-center text-sm border-collapse">
+                <div className="mb-6 border border-amber-300 bg-white shadow-sm">
+                  <div className="overflow-x-auto">
+                    <table className="w-full min-w-[32rem] border-collapse text-center text-sm">
                     <thead className="bg-[#b45309] text-white">
                       <tr>
                         <th className="px-4 py-4 font-bold border-r border-amber-600 align-middle">EPF Wage Slabs of Additional Employee (₹)</th>
@@ -133,7 +136,8 @@ export default function Public_Grievances() {
                         <td className="px-4 py-4">3000</td>
                       </tr>
                     </tbody>
-                  </table>
+                    </table>
+                  </div>
                 </div>
 
                 <div className="text-xs text-slate-600 space-y-3 leading-relaxed border-t border-amber-200 pt-4">

@@ -20,7 +20,7 @@ export default function Publications() {
       <PageHero title="Publications" />
 
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-8 lg:grid-cols-[1fr_280px] lg:px-12">
-        <div>
+        <div className="min-w-0">
           <p className="text-base leading-7 text-slate-700">
             FASII periodically brings out publications for its member associations and
             the wider small industries community. These include reference material,
@@ -75,7 +75,7 @@ export default function Publications() {
           </div>
         </div>
 
-        <aside>
+        <aside className="min-w-0">
           <div className="border border-orange-200 bg-white">
             <h2 className="border-b border-orange-200 bg-orange-50 px-5 py-3 text-sm font-bold uppercase tracking-wider text-orange-900">
               Related Links

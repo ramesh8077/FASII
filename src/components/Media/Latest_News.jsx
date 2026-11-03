@@ -40,12 +40,12 @@ export default function Latest_News() {
       <section className="mx-auto max-w-7xl px-5 mt-10 sm:px-8 lg:px-12">
         
         {/* Official Header */}
-        <div className="bg-white border border-slate-300 shadow-sm mb-8 flex items-center justify-between p-4 border-l-8 border-l-amber-500">
-          <div className="flex items-center gap-3">
+        <div className="mb-8 flex flex-wrap items-center justify-between gap-3 border border-l-8 border-slate-300 border-l-amber-500 bg-white p-4 shadow-sm">
+          <div className="flex min-w-0 items-center gap-3">
             <Megaphone size={24} className="text-orange-700" />
-            <h2 className="text-lg font-bold uppercase tracking-widest text-slate-900">Latest Announcements</h2>
+            <h2 className="min-w-0 text-base font-bold uppercase tracking-wide text-slate-900 sm:text-lg sm:tracking-widest">Latest Announcements</h2>
           </div>
-          <span className="text-xs font-bold bg-slate-100 px-3 py-1 uppercase border border-slate-200">Media Wing, FASII</span>
+          <span className="max-w-full border border-slate-200 bg-slate-100 px-3 py-1 text-xs font-bold uppercase">Media Wing, FASII</span>
         </div>
 
         {/* List Layout (No Cards) */}

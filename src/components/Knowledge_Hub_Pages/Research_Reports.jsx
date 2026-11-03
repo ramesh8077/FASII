@@ -22,7 +22,7 @@ export default function ResearchReports() {
         </p>
 
         <div className="grid gap-10 lg:grid-cols-[1fr_320px]">
-          <div>
+          <div className="min-w-0">
             <div className="border border-orange-200">
               <div className="bg-orange-700 px-5 py-3">
                 <h2 className="text-sm font-bold uppercase tracking-wider text-white">
@@ -71,7 +71,7 @@ export default function ResearchReports() {
             </div>
           </div>
 
-          <aside aria-label="Downloadable documents">
+          <aside aria-label="Downloadable documents" className="min-w-0">
             <div className="border border-orange-200 bg-white">
               <h2 className="border-b border-orange-200 bg-orange-50 px-5 py-3 text-sm font-bold uppercase tracking-wider text-orange-900">
                 Quick Downloads

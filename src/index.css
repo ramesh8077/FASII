@@ -31,6 +31,17 @@ main.bg-white {
     -moz-osx-font-smoothing: grayscale;
   }
 
+  img,
+  video,
+  iframe,
+  canvas {
+    max-width: 100%;
+  }
+
+  table {
+    max-width: 100%;
+  }
+
   h1,
   h2,
   h3 {

@@ -293,9 +293,9 @@ export default function Downloads() {
         
         {/* Document Header & Download Block */}
         <aside className="mb-10 flex flex-col sm:flex-row items-center justify-between gap-6 border-2 border-slate-300 bg-white p-6 md:p-8 shadow-sm">
-          <div className="flex items-center gap-4">
+          <div className="flex min-w-0 items-center gap-4">
             <FileText size={48} className="text-[#b45309] shrink-0" />
-            <div>
+            <div className="min-w-0">
               <p className="text-lg font-black uppercase text-slate-900">{schemeDocument.title}</p>
               <p className="mt-1 text-sm font-medium leading-6 text-slate-600 border-l-4 border-amber-500 pl-3">{schemeDocument.description}</p>
             </div>
@@ -309,10 +309,10 @@ export default function Downloads() {
           </a>
         </aside>
 
-        <div className="grid lg:grid-cols-[300px_1fr] gap-8 items-start">
+        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[300px_1fr]">
           
           {/* Left Navigation (Strict Sidebar) */}
-          <nav aria-label="On this page" className="sticky top-6 border border-slate-300 bg-white shadow-sm">
+          <nav aria-label="On this page" className="sticky top-6 min-w-0 border border-slate-300 bg-white shadow-sm">
             <div className="bg-slate-800 text-white px-5 py-4">
               <p className="text-sm font-bold uppercase tracking-widest">Document Index</p>
             </div>
@@ -321,10 +321,10 @@ export default function Downloads() {
                 <li key={section.number}>
                   <a
                     href={`#provision-${section.number}`}
-                    className="flex items-baseline gap-3 px-5 py-4 text-sm font-semibold text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#b45309]"
+                    className="flex min-w-0 items-baseline gap-3 px-5 py-4 text-sm font-semibold text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#b45309]"
                   >
                     <span className="shrink-0 font-bold text-amber-600">Section {section.number}.</span>
-                    <span>{section.title}</span>
+                    <span className="min-w-0">{section.title}</span>
                   </a>
                 </li>
               ))}
@@ -355,10 +355,10 @@ export default function Downloads() {
                   <div className="bg-[#fff8ec] border-l-4 border-[#b45309] px-5 py-3 mb-6">
                     <h2
                       id={`provision-title-${section.number}`}
-                      className="flex items-baseline gap-3 text-lg font-bold uppercase tracking-wide text-orange-950"
+                      className="flex flex-wrap items-baseline gap-3 text-lg font-bold uppercase tracking-wide text-orange-950"
                     >
                       <span className="shrink-0">Section {section.number}.</span>
-                      <span>{section.title}</span>
+                      <span className="min-w-0">{section.title}</span>
                     </h2>
                   </div>
                   <div className="pl-2">
